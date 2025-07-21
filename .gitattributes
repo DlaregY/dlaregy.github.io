@@ -1,0 +1,48 @@
+# === Line Endings ===
+# Normalize all text files to LF in the repository, convert to CRLF on Windows checkout if core.autocrlf = true
+* text=auto
+
+# === PHP Files ===
+*.php text
+
+# === Stylesheets and Scripts ===
+*.css  text
+*.scss text
+*.js   text
+*.ts   text
+
+# === Markup ===
+*.html text
+*.htm  text
+*.xml  text
+
+# === Configuration and Templates ===
+*.json text
+*.yml  text
+*.yaml text
+*.ini  text
+*.txt  text
+*.md   text
+*.pot  text
+*.po   text
+
+# === Images and Binary Files ===
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.zip  binary
+
+# === WordPress Specific Files ===
+readme.txt text
+license.txt text
+wp-config.php text
+.htaccess text
+
+# === Prevent Git from normalizing these files ===
+# (optional: remove if you want them normalized too)
+*.psd  binary
+*.mp4  binary
+*.mp3  binary

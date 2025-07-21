@@ -1,0 +1,33 @@
+/*
+ * Admin Styles for Elasta Theme
+ * Author & Copyright: Elasta
+ * URL: https://nicheaddons.com/
+ */
+
+/* Mega Menu */
+#menu-to-edit .menu-item-depth-0 .elst-menu-columns,
+#menu-to-edit .menu-item-depth-1 .elst-menu-mega,
+#menu-to-edit .menu-item-depth-2 .elst-menu-columns,
+#menu-to-edit .menu-item-depth-2 .elst-menu-mega,
+#menu-to-edit .menu-item-depth-3 .elst-menu-columns,
+#menu-to-edit .menu-item-depth-3 .elst-menu-mega,
+#menu-to-edit .menu-item-depth-4 .elst-menu-columns,
+#menu-to-edit .menu-item-depth-4 .elst-menu-mega,
+#menu-to-edit .menu-item-depth-5 .elst-menu-columns,
+#menu-to-edit .menu-item-depth-5 .elst-menu-mega,
+#menu-to-edit .menu-item-depth-6 .elst-menu-columns,
+#menu-to-edit .menu-item-depth-6 .elst-menu-mega,
+#menu-to-edit .menu-item-depth-7 .elst-menu-columns,
+#menu-to-edit .menu-item-depth-7 .elst-menu-mega,
+#menu-to-edit .menu-item-depth-8 .elst-menu-columns,
+#menu-to-edit .menu-item-depth-8 .elst-menu-mega {
+  display: none;
+}
+
+#menu-to-edit .menu-item-depth-1 .elst-menu-columns,
+#menu-to-edit .menu-item-depth-0 .elst-menu-mega {
+  display: block;
+}
+p.elst-cf-submenu_style {
+  width: 100%;
+}
