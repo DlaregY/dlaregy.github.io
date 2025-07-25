@@ -20,7 +20,7 @@ jobs:
           host: ${{ secrets.FTP_SERVER }}
           port: 22
           user: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          pass: ${{ secrets.FTP_PASSWORD }}
           localDir: ./wp-content/themes/twentyfourteen
           remoteDir: public_html/wp-content/themes/twentyfourteen
           options: --reverse --delete --verbose
