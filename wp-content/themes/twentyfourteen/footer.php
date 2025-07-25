@@ -35,5 +35,7 @@
 	</div><!-- #page -->
 
 	<?php wp_footer(); ?>
+	<p style="text-align:center; font-size: 12px;">This site was deployed via GitHub Actions 🚀</p>
+
 </body>
 </html>
