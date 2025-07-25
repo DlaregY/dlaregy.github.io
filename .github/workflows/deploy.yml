@@ -1,22 +1,25 @@
-name: Deploy to Bluehost via FTP
+name: Deploy TwentyFourteen Theme to Bluehost
 
 on:
   push:
     branches:
-      - master  # or 'main', depending on your repo
+      - master  # or 'main' if that's your default branch
+  workflow_dispatch:  # allows manual deploys via VS Code
 
 jobs:
   ftp-deploy:
-    name: 📤 Deploy via FTP
+    name: 📤 Deploy to Bluehost via FTP
     runs-on: ubuntu-latest
+
     steps:
-      - name: 📥 Checkout Repo
+      - name: 📥 Checkout Repository
         uses: actions/checkout@v3
 
-      - name: 🚀 Deploy to FTP
+      - name: 🚀 FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_TARGET_DIR }}
+          local-dir: wp-content/themes/twentyfourteen/
