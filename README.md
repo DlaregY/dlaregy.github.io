@@ -18,11 +18,11 @@ This build follows current personal-site best practices:
 - `contact.html` — Contact form using FormSubmit to send email automatically.
 
 ## Contact form setup (important)
-The form currently posts to:
+The contact form posts to:
 
-`https://formsubmit.co/YOUR_EMAIL@example.com`
+`https://formsubmit.co/gerald@geraldnorby.com`
 
-Replace `YOUR_EMAIL@example.com` in `contact.html` with your real email address to activate delivery.
+Update `contact.html` if this delivery address ever changes.
 
 ## Local run
 ```bash
