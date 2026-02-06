@@ -8,6 +8,14 @@
       name="description"
       content="Gerald Norby's personal website featuring projects, favorite books, and ways to connect."
     />
+    <meta
+      name="keywords"
+      content="opportunistic knowledge seeker, aspiring stoic, athlete, perpetual student, creative problem solver, absurdity enjoyer, behavioral psychology enthusiast, techno-futurist acolyte, robot lover"
+    />
+    <meta
+      name="design-notes"
+      content="Personality signals: opportunistic knowledge seeker, aspiring stoic, athlete, perpetual student, creative problem solver, absurdity enjoyer, behavioral psychology enthusiast, techno-futurist acolyte, robot lover."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,8 +26,9 @@
   </head>
   <body>
     <div class="aurora"></div>
+    <div class="grid-overlay"></div>
     <header class="site-header">
-      <a class="brand" href="index.html">Gerald Norby</a>
+      <a class="brand" href="index.html">Gerald Norby <span>system notes</span></a>
       <button class="menu-button" aria-label="Toggle menu">☰</button>
       <nav>
         <a href="projects.html">Projects</a>
@@ -32,30 +41,50 @@
 
     <main>
       <section class="hero section card">
-        <div>
-          <span class="floating-badge">✨ personal &amp; delightfully odd</span>
+        <div class="hero-panel">
+          <span class="floating-badge">✨ curiosity meets calm</span>
           <p class="eyebrow">Hello, I'm Gerald</p>
-          <h1>Building playful, human-first digital spaces.</h1>
+          <h1>Building future-leaning, human-first digital spaces.</h1>
           <p>
-            I like to mix curiosity with clarity: product strategy, design systems, and experiments that make people
-            smile. This corner of the internet is my scrapbook of projects, books, and good links.
+            I mix opportunistic learning with steady, systems-first thinking. Expect experiments in product strategy,
+            behavioral psychology, and design systems that keep the playful edge while staying grounded.
           </p>
           <div class="hero-actions">
             <a class="button" href="projects.html">Explore projects</a>
             <a class="button button-secondary" href="contact.html">Let's connect</a>
           </div>
           <div class="tag-list">
-            <span class="tag">Builder</span>
-            <span class="tag">Story collector</span>
+            <span class="tag">Creative problem solver</span>
+            <span class="tag">Perpetual student</span>
             <span class="tag">Systems thinker</span>
-            <span class="tag">Color lover</span>
+            <span class="tag">Techno-futurist</span>
           </div>
+          <ul class="signal-list">
+            <li class="signal">
+              <div>
+                <strong>Opportunistic knowledge seeker</strong>
+                <p>Always tracking patterns across tech, culture, and human behavior.</p>
+              </div>
+            </li>
+            <li class="signal">
+              <div>
+                <strong>Aspiring Stoic + Athlete</strong>
+                <p>Training patience and resilience with equal time on the mat and the page.</p>
+              </div>
+            </li>
+            <li class="signal">
+              <div>
+                <strong>Absurdity enjoyer</strong>
+                <p>Serious about craft, light enough to make space for delight.</p>
+              </div>
+            </li>
+          </ul>
         </div>
         <div class="image-placeholder">
           <strong>Image placeholder:</strong>
           <span>
             Hand-drawn portrait, studio photo, or playful illustration with bold color. Suggested size: 720 × 720 px.
-            Colors: coral, indigo, warm cream.
+            Colors: coral, indigo, warm cream. Proposed file: assets/images/gerald-portrait.png.
           </span>
         </div>
       </section>
@@ -80,12 +109,28 @@
 
       <section class="section card">
         <h2>Creative studio notes</h2>
-        <ul class="feature-list">
-          <li>Every project starts with a story, not a spec sheet.</li>
-          <li>I collect patterns from music, architecture, and sci-fi covers.</li>
-          <li>Design should feel like a conversation, not a monologue.</li>
-          <li>Energy check: playful, optimistic, quietly bold.</li>
-        </ul>
+        <div class="insight-grid">
+          <article class="insight-card">
+            <span>01 / ethos</span>
+            <h3>Stoic clarity</h3>
+            <p>Design should feel calm and capable, even when the ideas are bold.</p>
+          </article>
+          <article class="insight-card">
+            <span>02 / motion</span>
+            <h3>Playful precision</h3>
+            <p>Every experiment keeps a playful edge, a clear system, and a testable next step.</p>
+          </article>
+          <article class="insight-card">
+            <span>03 / curiosity</span>
+            <h3>Behavioral signals</h3>
+            <p>Patterns from psychology, robotics, and culture shape how the experiences breathe.</p>
+          </article>
+          <article class="insight-card">
+            <span>04 / energy</span>
+            <h3>Optimistic futurism</h3>
+            <p>Tech should feel like a useful companion, not a cold instruction manual.</p>
+          </article>
+        </div>
       </section>
     </main>
 
