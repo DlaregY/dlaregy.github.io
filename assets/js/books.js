@@ -1,33 +1,33 @@
 const books = [
   {
-    title: 'Atomic Habits',
-    author: 'James Clear',
-    why: 'The most practical framework I have found for building durable habits.',
-    link: 'https://www.amazon.com/dp/0735211299'
+    title: "Stephen King's Dark Tower series",
+    author: 'Stephen King',
+    why: 'A genre-bending epic that mixes myth, western, and friendship into one sprawling quest.',
+    link: 'https://www.amazon.com/s?k=The+Dark+Tower+series+Stephen+King'
   },
   {
-    title: 'The Psychology of Money',
-    author: 'Morgan Housel',
-    why: 'Simple lessons on behavior, risk, and long-term wealth decisions.',
-    link: 'https://www.amazon.com/dp/0857197681'
+    title: 'How to Fail at Everything and Still Win Big',
+    author: 'Scott Adams',
+    why: 'A candid take on systems, persistence, and redefining what success feels like.',
+    link: 'https://www.amazon.com/dp/1591847745'
   },
   {
-    title: 'Deep Work',
-    author: 'Cal Newport',
-    why: 'A powerful reminder to protect focus in a distracted world.',
-    link: 'https://www.amazon.com/dp/1455586692'
+    title: "Asimov's Foundation series",
+    author: 'Isaac Asimov',
+    why: 'Grand-scale sci-fi about knowledge, foresight, and the arc of civilizations.',
+    link: 'https://www.amazon.com/s?k=Foundation+series+Isaac+Asimov'
   },
   {
-    title: 'The Lean Startup',
-    author: 'Eric Ries',
-    why: 'Great for building products through rapid experimentation and learning.',
-    link: 'https://www.amazon.com/dp/0307887898'
+    title: 'One Summer: America 1927',
+    author: 'Bill Bryson',
+    why: 'A vivid snapshot of an electric moment in American history.',
+    link: 'https://www.amazon.com/dp/0767919412'
   },
   {
-    title: 'Thinking, Fast and Slow',
-    author: 'Daniel Kahneman',
-    why: 'Sharpens your understanding of decision-making and cognitive bias.',
-    link: 'https://www.amazon.com/dp/0374533555'
+    title: 'The Righteous Mind',
+    author: 'Jonathan Haidt',
+    why: 'A thoughtful exploration of moral psychology and why good people disagree.',
+    link: 'https://www.amazon.com/dp/0307455777'
   }
 ];
 
@@ -38,6 +38,10 @@ if (bookGrid) {
     .map(
       (book) => `
       <article class="card book-card">
+        <div class="image-placeholder small">
+          <strong>Cover placeholder:</strong>
+          <span>Vintage cover art or illustrated motif for "${book.title}".</span>
+        </div>
         <p class="eyebrow">${book.author}</p>
         <h2>${book.title}</h2>
         <p>${book.why}</p>
