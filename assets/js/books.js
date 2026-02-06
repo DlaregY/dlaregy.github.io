@@ -1,33 +1,33 @@
 const books = [
   {
-    title: "The Dark Tower Series",
-    author: "Stephen King",
-    why: "A wildly imaginative blend of fantasy, western, horror, and heart.",
-    link: "https://www.amazon.com/s?k=stephen+king+dark+tower+series"
+    title: 'Atomic Habits',
+    author: 'James Clear',
+    why: 'The most practical framework I have found for building durable habits.',
+    link: 'https://www.amazon.com/dp/0735211299'
   },
   {
-    title: "How to Fail at Almost Everything and Still Win Big",
-    author: "Scott Adams",
-    why: "A systems-first mindset for success that rewards experimentation over ego.",
-    link: "https://www.amazon.com/dp/1591847745"
+    title: 'The Psychology of Money',
+    author: 'Morgan Housel',
+    why: 'Simple lessons on behavior, risk, and long-term wealth decisions.',
+    link: 'https://www.amazon.com/dp/0857197681'
   },
   {
-    title: "Foundation Series",
-    author: "Isaac Asimov",
-    why: "Big-idea science fiction about civilization, prediction, and long-term strategy.",
-    link: "https://www.amazon.com/s?k=asimov+foundation+series"
+    title: 'Deep Work',
+    author: 'Cal Newport',
+    why: 'A powerful reminder to protect focus in a distracted world.',
+    link: 'https://www.amazon.com/dp/1455586692'
   },
   {
-    title: "One Summer: America, 1927",
-    author: "Bill Bryson",
-    why: "A brilliant snapshot of a year packed with cultural shifts and larger-than-life characters.",
-    link: "https://www.amazon.com/dp/0767919408"
+    title: 'The Lean Startup',
+    author: 'Eric Ries',
+    why: 'Great for building products through rapid experimentation and learning.',
+    link: 'https://www.amazon.com/dp/0307887898'
   },
   {
-    title: "The Righteous Mind",
-    author: "Jonathan Haidt",
-    why: "A sharp guide for understanding morality, polarization, and why people disagree.",
-    link: "https://www.amazon.com/dp/0307455777"
+    title: 'Thinking, Fast and Slow',
+    author: 'Daniel Kahneman',
+    why: 'Sharpens your understanding of decision-making and cognitive bias.',
+    link: 'https://www.amazon.com/dp/0374533555'
   }
 ];
 
