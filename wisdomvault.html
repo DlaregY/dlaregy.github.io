@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WisdomVault | Gerald Norby</title>
+    <meta
+      name="description"
+      content="WisdomVault is a local-first desktop app for audio journaling and project-based interview questions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="aurora"></div>
+    <div class="grid-overlay"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html">Gerald Norby <span>system notes</span></a>
+      <button class="menu-button" aria-label="Toggle menu">&#9776;</button>
+      <nav>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="books.html">Books</a>
+        <a href="links.html">Links</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/geraldnorby" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section card project-hero">
+        <p class="eyebrow">Project Profile</p>
+        <h1>WisdomVault</h1>
+        <p class="hero-copy">A local-first desktop app for audio journaling and project-based interview questions.</p>
+        <p>
+          WisdomVault is a simple, privacy-focused desktop application that helps you record and organize audio
+          answers to structured questions. All data is stored locally on your computer: no cloud, no accounts, no
+          syncing.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-secondary" href="projects.html">&#8592; Back to Projects</a>
+        </div>
+      </section>
+
+      <section class="section split-grid" aria-label="WisdomVault details">
+        <article class="card">
+          <h2>Features</h2>
+          <ul class="feature-list">
+            <li><strong>100% Local:</strong> All recordings and data are stored on your computer.</li>
+            <li><strong>Project-Based Organization:</strong> Create multiple question sets as projects.</li>
+            <li><strong>Audio Recording:</strong> Built-in recording with WebM format.</li>
+            <li>
+              <strong>Smart Question Serving:</strong> Use sequential or random order, with optional prioritization
+              of least-answered questions.
+            </li>
+            <li><strong>Question Management:</strong> Edit unanswered questions and lock answered ones.</li>
+            <li>
+              <strong>Clean Folder Structure:</strong> Human-browsable files organized by project and question number.
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Why this exists</h2>
+          <p>
+            WisdomVault is designed for private reflection and structured storytelling. It keeps the workflow simple:
+            open a project, answer a question, and build a durable archive of your own voice over time.
+          </p>
+          <p>
+            The focus is long-term usability and ownership. Because everything is local and organized cleanly, your
+            recordings remain accessible without depending on a hosted service.
+          </p>
+        </article>
+      </section>
+
+      <section class="section card download-card">
+        <p class="eyebrow">Download</p>
+        <h2>Get WisdomVault</h2>
+        <p>The first public build is in progress.</p>
+        <button class="button" type="button" disabled>Download (Coming soon)</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Gerald Norby</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

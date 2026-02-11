@@ -191,6 +191,37 @@ p {
   flex-wrap: wrap;
 }
 
+.project-hero h1 {
+  margin: 0;
+}
+
+.feature-list {
+  margin: 0.7rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.45rem;
+}
+
+.feature-list li {
+  line-height: 1.45;
+}
+
+.download-card {
+  text-align: center;
+}
+
+.download-card h2 {
+  margin-top: 0.35rem;
+}
+
+.button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+  filter: saturate(70%);
+}
+
 .split-grid {
   display: grid;
   gap: 1rem;
