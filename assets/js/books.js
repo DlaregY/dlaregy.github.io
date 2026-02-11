@@ -470,8 +470,21 @@ const categoryByTitle = {
 };
 
 const defaultCategory = 'Literary Fiction and Classics';
+const amazonAffiliateTag = 'geraldnorby-20';
 
 const bookGrid = document.getElementById('bookGrid');
+
+const withAmazonTag = (url) => {
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname.includes('amazon.com')) {
+      parsed.searchParams.set('tag', amazonAffiliateTag);
+    }
+    return parsed.toString();
+  } catch (_error) {
+    return url;
+  }
+};
 
 const renderBookCard = (book) => `
   <article class="compact-item compact-item-static">
@@ -480,7 +493,7 @@ const renderBookCard = (book) => `
       <p>${book.author} · ${book.why}</p>
     </div>
     <div class="compact-actions">
-      <a class="mini-link" href="${book.link}" target="_blank" rel="noopener noreferrer">Amazon ↗</a>
+      <a class="mini-link" href="${withAmazonTag(book.link)}" target="_blank" rel="noopener noreferrer">Amazon ↗</a>
       <a class="mini-link secondary" href="${book.goodreads}" target="_blank" rel="noopener noreferrer">Goodreads ↗</a>
     </div>
   </article>
