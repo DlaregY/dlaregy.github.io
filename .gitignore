@@ -1,5 +1,6 @@
 wp-content/uploads/
 wp-config.php
+.vscode/settings.json
 # Ignore backup files
 wp-content/ai1wm-backups/
 wp-content/wpvividbackups/
