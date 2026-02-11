@@ -202,6 +202,27 @@ p {
   gap: 0.45rem;
 }
 
+.project-list .compact-item,
+.project-list .compact-item-static {
+  min-width: 0;
+}
+
+.project-list .compact-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.project-list .compact-main h2,
+.project-list .compact-main p {
+  overflow-wrap: anywhere;
+}
+
+.project-list .compact-main p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
 .compact-item {
   display: flex;
   align-items: center;
