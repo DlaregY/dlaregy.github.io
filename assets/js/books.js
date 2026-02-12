@@ -9,14 +9,14 @@ const books = [
   {
     title: 'How to Fail at Everything and Still Win Big',
     author: 'Scott Adams',
-    why: 'Funny, practical advice on persistence without guru fluff.',
+    why: 'Funny, practical advice on persistence from a professional contrarian.',
     link: 'https://www.amazon.com/dp/1591847745',
     goodreads: 'https://www.goodreads.com/search?q=How%20to%20Fail%20at%20Everything%20and%20Still%20Win%20Big'
   },
   {
     title: "Asimov's Foundation series",
     author: 'Isaac Asimov',
-    why: 'Classic sci-fi about knowledge, prediction, and long-view history.',
+    why: 'Big-idea sci-fi about math, empire, and humans making the same mistakes forever.',
     link: 'https://www.amazon.com/s?k=Foundation+series+Isaac+Asimov',
     goodreads: 'https://www.goodreads.com/search?q=Foundation%20series%20Isaac%20Asimov'
   },
@@ -86,7 +86,7 @@ const books = [
   {
     title: 'How to Have Confidence and Power in Dealing with People',
     author: 'Les Giblin',
-    why: 'Old-school people skills advice that still works.',
+    why: 'Old-school people skills advice that still lands.',
     link: 'https://www.amazon.com/s?k=How+to+Have+Confidence+and+Power+in+Dealing+with+People',
     goodreads: 'https://www.goodreads.com/search?q=How%20to%20Have%20Confidence%20and%20Power%20in%20Dealing%20with%20People'
   },
@@ -100,7 +100,7 @@ const books = [
   {
     title: 'The Way of the Shaman series',
     author: 'Vasily Mahanenko',
-    why: 'Progression-heavy LitRPG with satisfying game-world pacing.',
+    why: 'LitRPG with strong pacing and the literary equivalent of potato chips.',
     link: 'https://www.amazon.com/s?k=The+Way+of+the+Shaman+series',
     goodreads: 'https://www.goodreads.com/search?q=The%20Way%20of%20the%20Shaman%20series'
   },
@@ -240,7 +240,7 @@ const books = [
   {
     title: 'Adaptive Markets',
     author: 'Andrew W. Lo',
-    why: 'A useful look at how people actually behave in financial markets.',
+    why: 'A smart look at how people behave when money and fear enter the chat.',
     link: 'https://www.amazon.com/s?k=Adaptive+Markets+Andrew+Lo',
     goodreads: 'https://www.goodreads.com/search?q=Adaptive%20Markets%20Andrew%20W%20Lo'
   },
@@ -490,7 +490,7 @@ const renderBookCard = (book) => `
   <article class="compact-item compact-item-static">
     <div class="compact-main">
       <h3>${book.title}</h3>
-      <p>${book.author} - ${book.why}</p>
+      <p>${book.author} &middot; ${book.why}</p>
     </div>
     <div class="compact-actions">
       <a class="mini-link" href="${withAmazonTag(book.link)}" target="_blank" rel="noopener noreferrer">Amazon &#8599;</a>
