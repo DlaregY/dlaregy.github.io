@@ -23,9 +23,16 @@ html[data-theme='nes'] .brand,
 html[data-theme='nes'] .theme-toggle,
 html[data-theme='nes'] nav a,
 html[data-theme='nes'] .menu-button {
-  font-family: 'Press Start 2P', 'Silkscreen', monospace;
+  font-family: 'Silkscreen', 'Trebuchet MS', 'Verdana', monospace;
   letter-spacing: 0;
   font-size: 0.72rem;
+  font-weight: 400;
+  font-synthesis: none;
+}
+
+html[data-theme='nes'] .brand span,
+html[data-theme='nes'] nav a[aria-current='page'] {
+  font-weight: 400;
 }
 
 html[data-theme='nes'] .card,
