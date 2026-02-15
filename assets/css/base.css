@@ -149,7 +149,16 @@ main {
 
 .hero-copy {
   margin: 0;
-  max-width: 42ch;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(0.9rem, 1.1vw, 1.02rem);
+  line-height: 1.35;
+}
+
+@media (max-width: 860px) {
+  .hero-copy {
+    white-space: normal;
+  }
 }
 
 .hero-visual {
