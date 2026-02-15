@@ -1,4 +1,5 @@
+---
 deployment:
   tasks:
-    - export DEPLOYPATH="$HOME/public_html/"
-    - /bin/cp -R ./* "$DEPLOYPATH"
+    - export DEPLOYPATH=/home7/geraldna/public_html/
+    - /usr/bin/rsync -av --delete --exclude='.git/' --exclude='.cpanel.yml' --exclude='.well-known/' ./ "$DEPLOYPATH"
