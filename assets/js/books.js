@@ -1,3 +1,6 @@
+const books = [];
+
+/*
 const books = [
   {
     title: "Stephen King's Dark Tower series",
@@ -399,6 +402,7 @@ const books = [
     goodreads: 'https://www.goodreads.com/search?q=Lectures%20of%20Col.%20R.%20G.%20Ingersoll'
   }
 ];
+*/
 
 const categoryOrder = [
   'Science Fiction, Fantasy, and Speculative Fiction',
