@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+html[data-theme='dos'] {
+  --bg: #0b0d0b;
+  --card: #121512;
+  --text: #d5dfcf;
+  --muted: #b9c4b3;
+  --accent: #9effa0;
+  --accent-2: #9effa0;
+  --accent-3: #9effa0;
+  --border: #5f7c5f;
+  --shadow: none;
+  --font-body: 'VT323', 'Courier New', Courier, monospace;
+  --body-bg: var(--bg);
+  --aurora-bg: none;
+  --grid-image: repeating-linear-gradient(180deg, rgba(158, 255, 160, 0.08) 0 1px, transparent 1px 3px);
+  --grid-opacity: 0.25;
+  --header-bg: rgba(11, 13, 11, 0.95);
+}
+
+html[data-theme='dos'] .card,
+html[data-theme='dos'] .compact-item-static,
+html[data-theme='dos'] input,
+html[data-theme='dos'] textarea,
+html[data-theme='dos'] .theme-toggle {
+  border-radius: 0;
+}
