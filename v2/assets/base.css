@@ -177,6 +177,31 @@ textarea:focus-visible {
   top: 8px;
 }
 
+
+.home-hero {
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: minmax(220px, 360px) 1fr;
+  align-items: start;
+}
+
+.hero-portrait {
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--border);
+  background: var(--panel-alt);
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-portrait {
+    max-width: 420px;
+  }
+}
+
 .columns {
   display: grid;
   gap: var(--space-2);
