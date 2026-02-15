@@ -1,28 +1,55 @@
 # Gerald Norby Personal Website
 
-A fully rebuilt, modern personal website with dedicated pages for projects, book recommendations, favorite links, and contact.
-
-## Design direction used
-This build follows current personal-site best practices:
-- **Strong first-screen storytelling** with clear call-to-actions.
-- **Premium modern visuals** (gradient lighting + glassmorphism depth).
-- **Mobile-first, responsive layout** with accessible contrast and readable typography.
-- **Performance-focused approach**: static pages, minimal JavaScript, and semantic HTML.
-- **Content architecture**: separate pages for projects, books, links, and contact.
+A static personal website with one shared set of pages and three switchable themes: `modern`, `nes`, and `dos`.
 
 ## Pages
-- `index.html` — Hero + summary sections.
-- `projects.html` — Web project links (placeholder cards ready for your links).
-- `books.html` — Book recommendations rendered from `assets/js/books.js`.
-- `links.html` — Misc websites/resources.
-- `contact.html` — Contact form using FormSubmit to send email automatically.
+- `index.html`
+- `projects.html`
+- `challenges.html`
+- `books.html`
+- `links.html`
+- `contact.html`
+- `wisdomvault.html`
 
-## Contact form setup (important)
-The contact form posts to:
+## Theme system
+- The active theme is stored in `localStorage` as `theme` (`modern`, `nes`, or `dos`).
+- The theme is applied by setting `data-theme` on the root `<html>` element.
+- Each page loads:
+  - `assets/css/base.css`
+  - `assets/css/theme-modern.css`
+  - `assets/css/theme-nes.css`
+  - `assets/css/theme-dos.css`
 
-`https://formsubmit.co/gerald@geraldnorby.com`
+## Themed images
+Use themed image swapping only for images marked with `.themed-img`.
 
-Update `contact.html` if this delivery address ever changes.
+### Naming convention
+For any themed image, store both files:
+- `assets/img/<name>--modern.<ext>`
+- `assets/img/<name>--retro.<ext>`
+
+`--retro` is used automatically for both `nes` and `dos` themes.
+
+If a retro file is missing, JavaScript falls back to `--modern`.
+
+### HTML format
+```html
+<img
+  class="themed-img"
+  data-img-base="assets/img/<name>"
+  src="assets/img/<name>--modern.<ext>"
+  alt="..."
+/>
+```
+
+### Examples
+```html
+<img class="themed-img" data-img-base="assets/img/gerald-portrait" src="assets/img/gerald-portrait--modern.png" alt="Portrait of Gerald Norby" />
+```
+
+```html
+<img class="themed-img" data-img-base="assets/img/challengeboard" src="assets/img/challengeboard--modern.jpg" alt="Challengeboard screenshot" />
+```
 
 ## Local run
 ```bash

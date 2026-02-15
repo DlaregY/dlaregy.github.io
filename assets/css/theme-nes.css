@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap');
+
+html[data-theme='nes'] {
+  --bg: #0f1331;
+  --card: #1a2358;
+  --text: #f7f7ff;
+  --muted: #d7ddff;
+  --accent: #36f1ff;
+  --accent-2: #ffef5a;
+  --accent-3: #36f1ff;
+  --border: #f8f8f8;
+  --shadow: none;
+  --font-body: 'Silkscreen', 'Trebuchet MS', 'Verdana', 'Segoe UI', sans-serif;
+  --body-bg: linear-gradient(180deg, #1c2d85, #090d24 60%);
+  --aurora-bg: none;
+  --grid-image: linear-gradient(rgba(248, 248, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(248, 248, 248, 0.08) 1px, transparent 1px);
+  --grid-opacity: 0.35;
+  --header-bg: rgba(15, 19, 49, 0.93);
+}
+
+html[data-theme='nes'] .brand,
+html[data-theme='nes'] .theme-toggle,
+html[data-theme='nes'] nav a,
+html[data-theme='nes'] .menu-button {
+  font-family: 'Press Start 2P', 'Silkscreen', monospace;
+  letter-spacing: 0;
+  font-size: 0.72rem;
+}
+
+html[data-theme='nes'] .card,
+html[data-theme='nes'] .compact-item-static,
+html[data-theme='nes'] input,
+html[data-theme='nes'] textarea,
+html[data-theme='nes'] .theme-toggle {
+  border-radius: 0;
+}

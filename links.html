@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="modern">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/theme-modern.css" />
+    <link rel="stylesheet" href="assets/css/theme-nes.css" />
+    <link rel="stylesheet" href="assets/css/theme-dos.css" />
   </head>
   <body>
     <div class="aurora"></div>
@@ -27,6 +30,12 @@
         <a href="contact.html">Contact</a>
         <a href="https://www.linkedin.com/in/geraldnorby" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </nav>
+      <div class="theme-toggle" role="group" aria-label="Theme selector">
+        <span>Theme:</span>
+        <button type="button" data-theme-btn="modern">Modern</button>
+        <button type="button" data-theme-btn="dos">DOS</button>
+        <button type="button" data-theme-btn="nes">NES</button>
+      </div>
     </header>
 
     <main>
