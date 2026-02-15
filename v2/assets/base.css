@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap");
+
 :root {
   --bg: #101010;
   --text: #e6e6e6;
@@ -6,16 +8,66 @@
   --border: #666;
   --accent: #7be0ff;
   --focus: #ffe066;
+  --font-body: "Pixelify Sans", "Courier New", Courier, monospace;
+  --font-ui: "Silkscreen", "Pixelify Sans", "Courier New", Courier, monospace;
+  --font-display: "Press Start 2P", "Silkscreen", "Pixelify Sans", monospace;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --pixel-cut: 8px;
 }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
   min-height: 100vh;
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+.menu-grid a,
+.control-group,
+button,
+label {
+  font-family: var(--font-ui);
+}
+
+h1,
+.v2-header h1 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 40px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0 0 var(--space-2);
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 var(--space-2);
+}
+
+p,
+ul,
+ol,
+li,
+a,
+input,
+textarea {
+  font-size: 16px;
+  line-height: 24px;
 }
 
 a { color: var(--accent); }
@@ -31,7 +83,7 @@ textarea:focus-visible {
 .v2-shell {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 1rem 1rem 2rem;
+  padding: var(--space-2) var(--space-2) var(--space-4);
 }
 
 .v2-header,
@@ -39,19 +91,29 @@ textarea:focus-visible {
 .v2-footer {
   border: 2px solid var(--border);
   background: var(--panel);
-  padding: 1rem 1rem 2rem;
-  margin-bottom: 1rem;
+  padding: var(--space-2) var(--space-2) var(--space-3);
+  margin-bottom: var(--space-2);
+  clip-path: polygon(
+    var(--pixel-cut) 0,
+    calc(100% - var(--pixel-cut)) 0,
+    100% var(--pixel-cut),
+    100% calc(100% - var(--pixel-cut)),
+    calc(100% - var(--pixel-cut)) 100%,
+    var(--pixel-cut) 100%,
+    0 calc(100% - var(--pixel-cut)),
+    0 var(--pixel-cut)
+  );
 }
 
 .v2-header {
   display: grid;
-  gap: 1rem;
+  gap: var(--space-2);
 }
 
 .title-row {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-2);
   align-items: center;
   flex-wrap: wrap;
 }
@@ -59,22 +121,24 @@ textarea:focus-visible {
 .controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1rem;
+  gap: var(--space-1) var(--space-2);
   align-items: center;
 }
 
 .control-group {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--space-1);
 }
 
 .control-group button {
   background: transparent;
   color: inherit;
-  border: 1px solid var(--border);
-  padding: 0.2rem 0.6rem;
+  border: 2px solid var(--border);
+  padding: 8px 16px;
   cursor: pointer;
+  line-height: 16px;
+  clip-path: polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px);
 }
 
 .control-group button[aria-pressed="true"] {
@@ -85,26 +149,37 @@ textarea:focus-visible {
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 0.5rem;
+  gap: var(--space-1);
 }
 
 .menu-grid a {
   display: block;
-  padding: 0.45rem 0.6rem;
-  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border: 2px solid var(--border);
   text-decoration: none;
   color: inherit;
   background: var(--panel-alt);
+  letter-spacing: 1px;
+  position: relative;
+  clip-path: polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px);
 }
 
 .menu-grid a[aria-current="page"] {
   border-color: var(--accent);
   color: var(--accent);
+  padding-left: 32px;
+}
+
+.menu-grid a[aria-current="page"]::before {
+  content: "▶";
+  position: absolute;
+  left: 12px;
+  top: 8px;
 }
 
 .columns {
   display: grid;
-  gap: 1rem;
+  gap: var(--space-2);
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
@@ -116,30 +191,36 @@ textarea:focus-visible {
 }
 
 .list-card {
-  border: 1px solid var(--border);
-  padding: 0.75rem;
+  border: 2px solid var(--border);
+  padding: var(--space-2);
   background: var(--panel-alt);
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-2);
 }
 
-.form-grid { display: grid; gap: 0.5rem; }
+.form-grid { display: grid; gap: var(--space-1); }
 input, textarea {
   width: 100%;
   background: #000;
   color: var(--text);
-  border: 1px solid var(--border);
-  padding: 0.5rem;
+  border: 2px solid var(--border);
+  padding: 8px;
   font: inherit;
 }
 
 button[type="submit"] {
-  margin-top: 0.5rem;
-  border: 1px solid var(--border);
+  margin-top: var(--space-1);
+  border: 2px solid var(--border);
   background: var(--accent);
   color: #000;
   font: inherit;
-  padding: 0.5rem 0.8rem;
+  padding: 8px 16px;
   cursor: pointer;
+  clip-path: polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px);
+}
+
+.pixel-art,
+img[data-pixel="true"] {
+  image-rendering: pixelated;
 }
 
 body.effects-on::before {
@@ -156,4 +237,4 @@ body.effects-on::before {
   body.effects-on::before { display: none; }
 }
 
-.note-muted { opacity: 0.85; font-size: 0.95rem; }
+.note-muted { opacity: 0.85; font-size: 16px; line-height: 24px; }

@@ -1,37 +1,45 @@
 :root {
-  --bg: #0f1331;
+  --bg: #101c5a;
   --text: #f7f7ff;
-  --panel: #1a2358;
-  --panel-alt: #212f73;
+  --panel: #203179;
+  --panel-alt: #2c41a0;
   --border: #f8f8f8;
   --accent: #36f1ff;
   --focus: #ffef5a;
+  --font-body: "Pixelify Sans", "Trebuchet MS", "Verdana", sans-serif;
+  --font-ui: "Press Start 2P", "Silkscreen", "Pixelify Sans", monospace;
+  --font-display: "Press Start 2P", "Silkscreen", "Pixelify Sans", monospace;
 }
 
 body {
-  font-family: "Trebuchet MS", "Verdana", sans-serif;
-  background: linear-gradient(180deg, #1c2d85, #090d24 60%);
+  background: var(--bg);
 }
 
 .v2-header,
 .v2-panel,
 .v2-footer {
   border: 4px solid var(--border);
-  box-shadow: 0 0 0 4px #10183f;
+  box-shadow: 4px 4px 0 #10183f;
 }
 
 .menu-grid a,
 .list-card,
-.control-group button {
+.control-group button,
+button[type="submit"] {
   border-width: 3px;
+  box-shadow: 4px 4px 0 #10183f;
+}
+
+.menu-grid a {
+  letter-spacing: 2px;
 }
 
 .v2-header h1,
 h2,
 h3 {
-  letter-spacing: 0.03em;
+  letter-spacing: 1px;
 }
 
 .control-group button[aria-pressed="true"] {
-  box-shadow: 0 0 0 2px #fff;
+  box-shadow: 4px 4px 0 #fff;
 }
