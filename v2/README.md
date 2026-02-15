@@ -15,9 +15,15 @@ This folder contains a full-site redesign experiment inspired by retro interface
 ## Typography + pixel styling notes
 - Pixel font stack is loaded in `v2/assets/base.css` via Google Fonts: **Press Start 2P**, **Silkscreen**, **VT323**, and **Pixelify Sans**.
 - Theme wiring:
-  - **NES** (`theme-nes.css`): headings/navigation use Press Start 2P with chunkier letter spacing; body text uses Pixelify Sans for readability.
+  - **NES** (`theme-nes.css`): site title/nav/compact controls use pixel UI font; reading text uses a readable sans stack.
   - **DOS** (`theme-dos.css`): VT323 is used for most text and display headings.
 - Size tuning guidance:
   - Press Start 2P looks best on 8px multiples (`16px`, `24px`, `32px`).
   - Adjust `--font-body`, `--font-ui`, and `--font-display` in theme files to swap type styles quickly.
   - Keep spacing on the 8px scale defined in base (`--space-1` through `--space-4`) to preserve pixel rhythm.
+
+## NES readability + overflow guardrails
+- In NES theme, **pixel font** is reserved for the site title, nav tabs, and compact control labels/buttons.
+- In NES theme, **body copy** (paragraphs, list text, and panel reading content) uses a readable sans stack (`Trebuchet MS`/`Verdana`/`Segoe UI`).
+- Overflow protections in `theme-nes.css` are applied to header controls and nav tabs using `white-space: nowrap`, `overflow: hidden`, and `text-overflow: ellipsis`.
+- Card and panel headings are protected with `overflow-wrap: anywhere` so long text wraps instead of breaking layout bounds.
