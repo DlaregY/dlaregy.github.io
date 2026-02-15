@@ -130,8 +130,8 @@ main {
 
 .hero {
   display: grid;
-  gap: clamp(1.25rem, 2.5vw, 2.5rem);
-  grid-template-columns: minmax(270px, 1fr) minmax(300px, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.85fr);
   align-items: stretch;
 }
 
@@ -139,10 +139,11 @@ main {
   display: grid;
   gap: 0.75rem;
   align-content: center;
+  min-width: 0;
 }
 
 .hero h1 {
-  font-size: clamp(1.9rem, 4vw, 3.4rem);
+  font-size: clamp(1.75rem, 3.6vw, 3rem);
   margin: 0;
   line-height: 1.05;
 }
@@ -150,20 +151,17 @@ main {
 .hero-copy {
   margin: 0;
   max-width: none;
-  white-space: nowrap;
-  font-size: clamp(0.9rem, 1.1vw, 1.02rem);
+  white-space: normal;
+  font-size: clamp(0.82rem, 0.95vw, 0.95rem);
   line-height: 1.35;
-}
-
-@media (max-width: 860px) {
-  .hero-copy {
-    white-space: normal;
-  }
+  overflow-wrap: anywhere;
 }
 
 .hero-visual {
   margin: 0;
-  min-height: clamp(260px, 34vw, 420px);
+  width: min(100%, 75%);
+  justify-self: end;
+  aspect-ratio: 10 / 11;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--border);
@@ -211,9 +209,14 @@ p {
 
 .hero-actions {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.6rem;
   margin-top: 0.5rem;
   flex-wrap: wrap;
+}
+
+.hero-actions .button {
+  font-size: 0.92rem;
+  padding: 0.58rem 0.92rem;
 }
 
 .project-hero h1 {
@@ -415,7 +418,8 @@ textarea {
   }
 
   .hero-visual {
-    min-height: 320px;
+    width: min(100%, 420px);
+    justify-self: center;
     order: -1;
   }
 
