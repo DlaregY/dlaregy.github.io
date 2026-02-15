@@ -1,6 +1,10 @@
 # === Line Endings ===
 # Normalize all text files to LF in the repository, convert to CRLF on Windows checkout if core.autocrlf = true
 * text=auto
+# Force LF for YAML (critical for cPanel)
+.cpanel.yml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
 
 # === PHP Files ===
 *.php text

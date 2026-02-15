@@ -23,9 +23,37 @@ html[data-theme='nes'] .brand,
 html[data-theme='nes'] .theme-toggle,
 html[data-theme='nes'] nav a,
 html[data-theme='nes'] .menu-button {
-  font-family: 'Press Start 2P', 'Silkscreen', monospace;
+  font-family: 'Silkscreen', 'Trebuchet MS', 'Verdana', monospace;
   letter-spacing: 0;
   font-size: 0.72rem;
+  font-weight: 400;
+  font-synthesis: none;
+}
+
+html[data-theme='nes'] .brand span,
+html[data-theme='nes'] nav a[aria-current='page'] {
+  font-weight: 400;
+}
+
+html[data-theme='nes'] .hero h1,
+html[data-theme='nes'] h2 {
+  font-family: 'Space Grotesk', 'Inter', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.12;
+}
+
+html[data-theme='nes'] .hero h1 {
+  font-size: clamp(1.7rem, 3.3vw, 2.7rem);
+}
+
+html[data-theme='nes'] .hero-copy {
+  font-size: clamp(0.82rem, 1vw, 0.95rem);
+  letter-spacing: 0.01em;
+}
+
+html[data-theme='nes'] h2 {
+  font-size: clamp(1.3rem, 2.3vw, 1.8rem);
 }
 
 html[data-theme='nes'] .card,
