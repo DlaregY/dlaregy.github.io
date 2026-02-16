@@ -247,7 +247,7 @@ const books = [
     title: "What's Eating Gilbert Grape",
     author: 'Peter Hedges',
     // why: 'Grounded contemporary fiction about obligation and small-town life.',
-    why: '---',
+    why: 'I remember almost nothing about this book except that when I read it at age 19, it became my favorite book. It was probably supplanted a few months later, as favorite books often are, but that memory is a strong personal recommendation so I\'m sure I\'ll pick it up again someday.',
     link: 'https://www.amazon.com/s?k=What%27s+Eating+Gilbert+Grape',
     goodreads: 'https://www.goodreads.com/search?q=What%27s%20Eating%20Gilbert%20Grape'
   },
