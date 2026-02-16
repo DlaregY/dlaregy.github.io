@@ -43,20 +43,25 @@ body {
   z-index: 10;
 }
 
+.brand-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
 .brand {
   font-weight: 700;
   letter-spacing: 0.02em;
   font-size: 1.1rem;
 }
 
-.brand > span {
+.brand-tagline {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--muted);
-  margin-left: 0.35rem;
 }
 
 nav {

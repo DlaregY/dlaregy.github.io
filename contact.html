@@ -20,7 +20,10 @@
     <div class="aurora"></div>
     <div class="grid-overlay"></div>
     <header class="site-header">
-      <a class="brand" href="index.html">Gerald Norby <span>Incessantly <span title="Not Irritating!">Iterating</span></span></a>
+      <div class="brand-wrap">
+        <a class="brand" href="index.html">Gerald Norby</a>
+        <a class="brand-tagline" href="secret-login.html">Incessantly <span title="Not Irritating!">Iterating</span></a>
+      </div>
       <button class="menu-button" aria-label="Toggle menu">&#9776;</button>
       <nav>
         <a href="projects.html">Projects</a>
@@ -39,47 +42,29 @@
     </header>
 
     <main>
-      <!--
-            <section class="section card hero">
-              <div>
-                <p class="eyebrow">Get in touch</p>
-                <h1>Drop a dime.</h1>
-                <p>If you want to collaborate, ask a question, or report a mysterious internet occurrence, send me a message.</p>
-              </div>
-              <div class="image-placeholder small">
-                <strong>Image suggestion:</strong>
-                <span>
-                  Insert fake desk photo with coffee, notebook, and at least one suspicious sticky note. Suggested size: 640 x 420 px. Warm
-                  neutrals and muted greens work well. Proposed file: assets/images/contact-desk.png.
-                </span>
-              </div>
-            </section>
-      
-            <section class="section card">
-              <form class="contact-form" action="https://formsubmit.co/gerald@geraldnorby.com" method="POST">
-                <input type="hidden" name="_subject" value="New message from GeraldNorby.com" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-      
-                <label for="name">Name</label>
-                <input id="name" name="name" required />
-      
-                <label for="email">Email</label>
-                <input id="email" type="email" name="email" required />
-      
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-      
-                <button class="button" type="submit">Send message</button>
-              </form>
-              <p class="note">Messages are sent directly to <code>gerald@geraldnorby.com</code>, but I'm not sure whether that's a real email address or not.</p>
-            </section>
-          
-      -->
       <section class="section card">
-        <p class="eyebrow">UNDER CONSTRUCTION</p>
-        <h1>UNDER CONSTRUCTION</h1>
-        <p>I guess you guys aren't ready for this yet... but your kids are gonna love it.</p>
+        <p class="eyebrow">Get in touch</p>
+        <h1>Contact</h1>
+        <p><b>All</b> fields are required.</p>
+
+        <form class="contact-form" action="https://formsubmit.co/geraldnorby@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New contact submission from GeraldNorby.com" />
+          <input type="hidden" name="_template" value="table" />
+
+          <label for="name">Name</label>
+          <input id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="comment">Comment</label>
+          <textarea id="comment" name="comment" rows="4" required></textarea>
+
+          <label for="love">One (or more) thing(s) I love about geraldnorby.com and/or Gerald Norby</label>
+          <textarea id="love" name="things_i_love" rows="6" required></textarea>
+
+          <button class="button" type="submit">Send message</button>
+        </form>
       </section>
     </main>
 
