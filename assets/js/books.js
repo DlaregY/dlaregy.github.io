@@ -61,7 +61,8 @@ const books = [
     // why: 'A philosophical and psychological novel on morality, family, and faith.',
     why: '---',
     link: 'https://www.amazon.com/s?k=The+Brothers+Karamazov',
-    goodreads: 'https://www.goodreads.com/search?q=The%20Brothers%20Karamazov'
+    goodreads: 'https://www.goodreads.com/search?q=The%20Brothers%20Karamazov',
+    gutenberg: 'https://www.gutenberg.org/ebooks/28054'
   },
   {
     title: 'How to Think Like a Roman Emperor',
@@ -77,7 +78,8 @@ const books = [
     // why: 'A concise Stoic handbook on agency, judgment, and resilience.',
     why: '---',
     link: 'https://www.amazon.com/s?k=Epictetus+Enchiridion',
-    goodreads: 'https://www.goodreads.com/search?q=Epictetus%20Enchiridion'
+    goodreads: 'https://www.goodreads.com/search?q=Epictetus%20Enchiridion',
+    gutenberg: 'https://www.gutenberg.org/ebooks/45109'
   },
   {
     title: 'The Zamonia series',
@@ -229,7 +231,8 @@ const books = [
     // why: 'Psychological classic portraying alienation and fractured identity.',
     why: '---',
     link: 'https://www.amazon.com/s?k=A+Hero+of+Our+Time+Lermontov',
-    goodreads: 'https://www.goodreads.com/search?q=A%20Hero%20of%20Our%20Time%20Lermontov'
+    goodreads: 'https://www.goodreads.com/search?q=A%20Hero%20of%20Our%20Time%20Lermontov',
+    gutenberg: 'https://www.gutenberg.org/ebooks/913'
   },
   {
     title: "Alice's Adventures in Wonderland",
@@ -237,7 +240,8 @@ const books = [
     // why: 'A playful classic of logic, language, and absurdity.',
     why: '---',
     link: 'https://www.amazon.com/s?k=Alice%27s+Adventures+in+Wonderland+Lewis+Carroll',
-    goodreads: 'https://www.goodreads.com/search?q=Alice%27s%20Adventures%20in%20Wonderland%20Lewis%20Carroll'
+    goodreads: 'https://www.goodreads.com/search?q=Alice%27s%20Adventures%20in%20Wonderland%20Lewis%20Carroll',
+    gutenberg: 'https://www.gutenberg.org/ebooks/11'
   },
   {
     title: "What's Eating Gilbert Grape",
@@ -293,7 +297,8 @@ const books = [
     // why: 'Labor-focused novel confronting exploitation in industrial America.',
     why: '---',
     link: 'https://www.amazon.com/s?k=King+Coal+Upton+Sinclair',
-    goodreads: 'https://www.goodreads.com/search?q=King%20Coal%20Upton%20Sinclair'
+    goodreads: 'https://www.goodreads.com/search?q=King%20Coal%20Upton%20Sinclair',
+    gutenberg: 'https://www.gutenberg.org/ebooks/7522'
   },
   {
     title: 'Babbitt',
@@ -301,7 +306,8 @@ const books = [
     // why: 'Satire of conformity, ambition, and middle-class American life.',
     why: '---',
     link: 'https://www.amazon.com/s?k=Babbitt+Sinclair+Lewis',
-    goodreads: 'https://www.goodreads.com/search?q=Babbitt%20Sinclair%20Lewis'
+    goodreads: 'https://www.goodreads.com/search?q=Babbitt%20Sinclair%20Lewis',
+    gutenberg: 'https://www.gutenberg.org/ebooks/1156'
   },
   {
     title: 'MaddAddam series',
@@ -413,7 +419,8 @@ const books = [
     // why: 'Landmark social novel exposing labor conditions and industrial abuse.',
     why: '---',
     link: 'https://www.amazon.com/s?k=The+Jungle+Upton+Sinclair',
-    goodreads: 'https://www.goodreads.com/search?q=The%20Jungle%20Upton%20Sinclair'
+    goodreads: 'https://www.goodreads.com/search?q=The%20Jungle%20Upton%20Sinclair',
+    gutenberg: 'https://www.gutenberg.org/ebooks/140'
   },
   {
     title: 'Clockwork Angels series',
@@ -461,7 +468,8 @@ const books = [
     // why: 'Collected public lectures on religion, reason, liberty, and civic life.',
     why: '---',
     link: 'https://www.amazon.com/s?k=Lectures+of+Col.+R.+G.+Ingersoll',
-    goodreads: 'https://www.goodreads.com/search?q=Lectures%20of%20Col.%20R.%20G.%20Ingersoll'
+    goodreads: 'https://www.goodreads.com/search?q=Lectures%20of%20Col.%20R.%20G.%20Ingersoll',
+    gutenberg: 'https://www.gutenberg.org/ebooks/8389'
   }
 ];
 
@@ -562,6 +570,7 @@ const renderBookCard = (book) => `
     <div class="compact-actions">
       <a class="mini-link" href="${withAmazonTag(book.link)}" target="_blank" rel="noopener noreferrer">Amazon &#8599;</a>
       <a class="mini-link secondary" href="${book.goodreads}" target="_blank" rel="noopener noreferrer">Goodreads &#8599;</a>
+      ${book.gutenberg ? `<a class="mini-link tertiary" href="${book.gutenberg}" target="_blank" rel="noopener noreferrer">Gutenberg &#8599;</a>` : ''}
     </div>
   </article>
 `;

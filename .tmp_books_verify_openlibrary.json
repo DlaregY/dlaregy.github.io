@@ -1,0 +1,716 @@
+[
+  {
+    "title": "Dark Tower series",
+    "author": "Stephen King",
+    "status": "likely",
+    "score": 4,
+    "reason": "title_close author_hit(1/1)",
+    "topDoc": {
+      "title": "The Dark Tower (series) 1-8",
+      "author": "Stephen King",
+      "first_publish_year": 2016
+    },
+    "numFound": 2
+  },
+  {
+    "title": "How to Fail at Almost Everything and Still Win Big",
+    "author": "Scott Adams",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "How to fail at almost everything and still win big",
+      "author": "Scott Adams",
+      "first_publish_year": 2013
+    },
+    "numFound": 5
+  },
+  {
+    "title": "Foundation series",
+    "author": "Isaac Asimov",
+    "status": "likely",
+    "score": 4,
+    "reason": "title_close author_hit(1/1)",
+    "topDoc": {
+      "title": "Foundation Complete Series Set, 7 Books. Foundation, Second Foundation, Foundation and Empire, Foundation's Edge, Prelude to Foundation, Foundation and Earth, Forward the Foundation",
+      "author": "Isaac Asimov",
+      "first_publish_year": 2021
+    },
+    "numFound": 5
+  },
+  {
+    "title": "One Summer: America, 1927",
+    "author": "Bill Bryson",
+    "status": "uncertain",
+    "score": 0,
+    "reason": "no plausible match",
+    "topDoc": null,
+    "numFound": 0
+  },
+  {
+    "title": "The Righteous Mind",
+    "author": "Jonathan Haidt",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The Righteous Mind",
+      "author": "Jonathan Haidt; Antonio Kuntz",
+      "first_publish_year": 2012
+    },
+    "numFound": 1
+  },
+  {
+    "title": "Lanny Budd series",
+    "author": "Upton Sinclair",
+    "status": "uncertain",
+    "score": 0,
+    "reason": "no plausible match",
+    "topDoc": null,
+    "numFound": 0
+  },
+  {
+    "title": "It",
+    "author": "Stephen King",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "It",
+      "author": "Stephen King",
+      "first_publish_year": 1986
+    },
+    "numFound": 13
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The Brothers Karamazov",
+      "author": "Фёдор Михайлович Достоевский; Constance Garrett",
+      "first_publish_year": 2015
+    },
+    "numFound": 64
+  },
+  {
+    "title": "How to Think Like a Roman Emperor",
+    "author": "Donald Robertson",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "How to Think Like a Roman Emperor",
+      "author": "Donald Robertson",
+      "first_publish_year": 2019
+    },
+    "numFound": 1
+  },
+  {
+    "title": "The Enchiridion",
+    "author": "Epictetus",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The Enchiridion",
+      "author": "Epictetus",
+      "first_publish_year": 1955
+    },
+    "numFound": 34
+  },
+  {
+    "title": "The Zamonia series",
+    "author": "Walter Moers",
+    "status": "uncertain",
+    "score": 0,
+    "reason": "no plausible match",
+    "topDoc": null,
+    "numFound": 0
+  },
+  {
+    "title": "The Callahan series",
+    "author": "Spider Robinson",
+    "status": "uncertain",
+    "score": 0,
+    "reason": "no plausible match",
+    "topDoc": null,
+    "numFound": 0
+  },
+  {
+    "title": "How to Have Confidence and Power in Dealing with People",
+    "author": "Les Giblin",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "How to have confidence and power in dealing with people",
+      "author": "Les Giblin",
+      "first_publish_year": 1956
+    },
+    "numFound": 3
+  },
+  {
+    "title": "Destiny of the Republic",
+    "author": "Candice Millard",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The destiny of the republic",
+      "author": "Candice Millard",
+      "first_publish_year": 2011
+    },
+    "numFound": 3
+  },
+  {
+    "title": "The Way of the Shaman series",
+    "author": "Vasily Mahanenko",
+    "status": "likely",
+    "score": 4,
+    "reason": "title_close author_hit(1/1)",
+    "topDoc": {
+      "title": "Phantom Castle (the Way of the Shaman: Book #4) LitRPG Series",
+      "author": "Vasily Mahanenko",
+      "first_publish_year": 2016
+    },
+    "numFound": 1
+  },
+  {
+    "title": "Ready Player One",
+    "author": "Ernest Cline",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Ready Player One",
+      "author": "Ernest Cline",
+      "first_publish_year": 2008
+    },
+    "numFound": 2
+  },
+  {
+    "title": "Old Man's War",
+    "author": "John Scalzi",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Old Man’s War",
+      "author": "John Scalzi",
+      "first_publish_year": 2005
+    },
+    "numFound": 4
+  },
+  {
+    "title": "Starship Troopers",
+    "author": "Robert A. Heinlein",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Starship Troopers",
+      "author": "Robert A. Heinlein",
+      "first_publish_year": 1959
+    },
+    "numFound": 3
+  },
+  {
+    "title": "The Moon Is a Harsh Mistress",
+    "author": "Robert A. Heinlein",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The moon is a harsh mistress",
+      "author": "Robert A. Heinlein",
+      "first_publish_year": 1965
+    },
+    "numFound": 1
+  },
+  {
+    "title": "The Lazarus Long books",
+    "author": "Robert A. Heinlein",
+    "status": "uncertain",
+    "score": 0,
+    "reason": "no plausible match",
+    "topDoc": null,
+    "numFound": 0
+  },
+  {
+    "title": "The Hitchhiker's Guide to the Galaxy series",
+    "author": "Douglas Adams",
+    "status": "likely",
+    "score": 4,
+    "reason": "title_close author_hit(1/1)",
+    "topDoc": {
+      "title": "The Hitchhiker's Guide to the Galaxy, The Complete Radio Series",
+      "author": "Douglas Adams; Full Cast; Geoffrey McGivern; Mark Wing-Davey; Peter Jones; Simon Jones; Stephen Moore; Susan Sheridan",
+      "first_publish_year": 2005
+    },
+    "numFound": 3
+  },
+  {
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "How to Win Friends and Influence People",
+      "author": "Dale Carnegie",
+      "first_publish_year": 1936
+    },
+    "numFound": 27
+  },
+  {
+    "title": "Bastards",
+    "author": "Scott Lynch",
+    "status": "likely",
+    "score": 4,
+    "reason": "title_close author_hit(1/1)",
+    "topDoc": {
+      "title": "Red Seas Under Red Skies (Gentlemen Bastards #2)",
+      "author": "Scott Lynch",
+      "first_publish_year": 2007
+    },
+    "numFound": 7
+  },
+  {
+    "title": "The Amazing Adventures of Kavalier & Clay",
+    "author": "Michael Chabon",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The Amazing Adventures of Kavalier & Clay",
+      "author": "Michael Chabon",
+      "first_publish_year": 1957
+    },
+    "numFound": 1
+  },
+  {
+    "title": "Homo Deus",
+    "author": "Yuval Noah Harari",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Homo Deus",
+      "author": "Yuval Noah Harari",
+      "first_publish_year": 2017
+    },
+    "numFound": 13
+  },
+  {
+    "title": "The Cider House Rules",
+    "author": "John Irving",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The CIDER HOUSE RULES",
+      "author": "John Irving",
+      "first_publish_year": 1985
+    },
+    "numFound": 7
+  },
+  {
+    "title": "The Sot-Weed Factor",
+    "author": "John Barth",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The Sot-Weed Factor",
+      "author": "John Barth",
+      "first_publish_year": 1960
+    },
+    "numFound": 7
+  },
+  {
+    "title": "The End of the Road",
+    "author": "John Barth",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The end of the road",
+      "author": "John Barth",
+      "first_publish_year": 1958
+    },
+    "numFound": 9
+  },
+  {
+    "title": "A Hero of Our Time",
+    "author": "Mikhail Lermontov",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "A Hero of Our Time",
+      "author": "Михаил Юрьевич Лермонтов",
+      "first_publish_year": 1966
+    },
+    "numFound": 34
+  },
+  {
+    "title": "Alice's Adventures in Wonderland",
+    "author": "Lewis Carroll",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Alice's Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "first_publish_year": 1865
+    },
+    "numFound": 363
+  },
+  {
+    "title": "What's Eating Gilbert Grape",
+    "author": "Peter Hedges",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "What's eating Gilbert Grape",
+      "author": "Peter Hedges",
+      "first_publish_year": 1991
+    },
+    "numFound": 1
+  },
+  {
+    "title": "A Scanner Darkly",
+    "author": "Philip K. Dick",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "A Scanner Darkly",
+      "author": "Philip K. Dick",
+      "first_publish_year": 1977
+    },
+    "numFound": 2
+  },
+  {
+    "title": "Pet Sematary",
+    "author": "Stephen King",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Pet Sematary",
+      "author": "Stephen King",
+      "first_publish_year": 1983
+    },
+    "numFound": 3
+  },
+  {
+    "title": "Incerto series",
+    "author": "Nassim Nicholas Taleb",
+    "status": "uncertain",
+    "score": 0,
+    "reason": "no plausible match",
+    "topDoc": null,
+    "numFound": 0
+  },
+  {
+    "title": "The Mote in God's Eye",
+    "author": "Larry Niven and Jerry Pournelle",
+    "status": "uncertain",
+    "score": 0,
+    "reason": "no plausible match",
+    "topDoc": null,
+    "numFound": 0
+  },
+  {
+    "title": "Adaptive Markets",
+    "author": "Andrew W. Lo",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Adaptive markets",
+      "author": "Andrew W. Lo",
+      "first_publish_year": 2017
+    },
+    "numFound": 3
+  },
+  {
+    "title": "King Coal",
+    "author": "Upton Sinclair",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "King Coal",
+      "author": "Upton Sinclair",
+      "first_publish_year": 1905
+    },
+    "numFound": 4
+  },
+  {
+    "title": "Babbitt",
+    "author": "Sinclair Lewis",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Babbitt",
+      "author": "Sinclair Lewis",
+      "first_publish_year": 1922
+    },
+    "numFound": 17
+  },
+  {
+    "title": "MaddAddam series",
+    "author": "Margaret Atwood",
+    "status": "uncertain",
+    "score": 0,
+    "reason": "no plausible match",
+    "topDoc": null,
+    "numFound": 0
+  },
+  {
+    "title": "The Undoing Project: A Friendship That Changed Our Minds",
+    "author": "Michael Lewis",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The Undoing Project: A Friendship That Changed Our Minds",
+      "author": "Michael Lewis",
+      "first_publish_year": null
+    },
+    "numFound": 1
+  },
+  {
+    "title": "Midnight's Children",
+    "author": "Salman Rushdie",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Midnight's Children",
+      "author": "Salman Rushdie",
+      "first_publish_year": 1981
+    },
+    "numFound": 7
+  },
+  {
+    "title": "Memos from Purgatory",
+    "author": "Harlan Ellison",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Memos from Purgatory",
+      "author": "Harlan Ellison",
+      "first_publish_year": 1961
+    },
+    "numFound": 7
+  },
+  {
+    "title": "Dune trilogy",
+    "author": "Frank Herbert",
+    "status": "likely",
+    "score": 4,
+    "reason": "title_close author_hit(1/1)",
+    "topDoc": {
+      "title": "The Great Dune Trilogy",
+      "author": "Frank Herbert",
+      "first_publish_year": 1977
+    },
+    "numFound": 7
+  },
+  {
+    "title": "The Vampire Chronicles",
+    "author": "Anne Rice",
+    "status": "likely",
+    "score": 4,
+    "reason": "title_close author_hit(1/1)",
+    "topDoc": {
+      "title": "Vampire Chronicles (Interview with the Vampire / Queen of the Damned / Vampire Lestat)",
+      "author": "Anne Rice",
+      "first_publish_year": 1989
+    },
+    "numFound": 3
+  },
+  {
+    "title": "The Bonfire of the Vanities",
+    "author": "Tom Wolfe",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The Bonfire of the Vanities",
+      "author": "Tom Wolfe",
+      "first_publish_year": 1987
+    },
+    "numFound": 10
+  },
+  {
+    "title": "A Man in Full",
+    "author": "Tom Wolfe",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "A Man in Full",
+      "author": "Tom Wolfe",
+      "first_publish_year": 1998
+    },
+    "numFound": 4
+  },
+  {
+    "title": "12 Rules for Life: An Antidote to Chaos",
+    "author": "Jordan B. Peterson",
+    "status": "likely",
+    "score": 4,
+    "reason": "title_close author_hit(1/1)",
+    "topDoc": {
+      "title": "Lifespan Why We Age and Why We Don’t Have To By Dr David A. Sinclair and 12 Rules for Life An Antidote to Chaos By Jordan B. Peterson 2 books Collection Set",
+      "author": "David Sinclair; Jordan B. Peterson; David A Sinclair Phd",
+      "first_publish_year": 2020
+    },
+    "numFound": 3
+  },
+  {
+    "title": "Cold Mountain",
+    "author": "Charles Frazier",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Cold Mountain",
+      "author": "Charles Frazier",
+      "first_publish_year": 1997
+    },
+    "numFound": 32
+  },
+  {
+    "title": "Mount Chicago",
+    "author": "Adam Levin",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Mount Chicago",
+      "author": "Adam Levin",
+      "first_publish_year": 2022
+    },
+    "numFound": 1
+  },
+  {
+    "title": "Moonwalking with Einstein: The Art and Science of Remembering Everything",
+    "author": "Joshua Foer",
+    "status": "uncertain",
+    "score": 0,
+    "reason": "no plausible match",
+    "topDoc": null,
+    "numFound": 0
+  },
+  {
+    "title": "Half Empty",
+    "author": "David Rakoff",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Half empty",
+      "author": "David Rakoff",
+      "first_publish_year": 2010
+    },
+    "numFound": 4
+  },
+  {
+    "title": "The Jungle",
+    "author": "Upton Sinclair",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The Jungle",
+      "author": "Upton Sinclair",
+      "first_publish_year": 1707
+    },
+    "numFound": 12
+  },
+  {
+    "title": "Clockwork Angels series",
+    "author": "Kevin J. Anderson and Neil Peart",
+    "status": "uncertain",
+    "score": 0,
+    "reason": "no plausible match",
+    "topDoc": null,
+    "numFound": 0
+  },
+  {
+    "title": "Vampire$",
+    "author": "John Steakley",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "Vampires",
+      "author": "John Steakley",
+      "first_publish_year": 1990
+    },
+    "numFound": 6
+  },
+  {
+    "title": "The World of Null-A",
+    "author": "A. E. van Vogt",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The World of Null-A",
+      "author": "A. E. van Vogt",
+      "first_publish_year": 1950
+    },
+    "numFound": 3
+  },
+  {
+    "title": "The Learners",
+    "author": "Chip Kidd",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The learners",
+      "author": "Chip Kidd",
+      "first_publish_year": 2008
+    },
+    "numFound": 1
+  },
+  {
+    "title": "The Ask",
+    "author": "Sam Lipsyte",
+    "status": "verified",
+    "score": 5,
+    "reason": "title_exact author_hit(1/1)",
+    "topDoc": {
+      "title": "The Ask",
+      "author": "Sam Lipsyte",
+      "first_publish_year": 2010
+    },
+    "numFound": 2
+  },
+  {
+    "title": "Lectures of Col. R. G. Ingersoll",
+    "author": "Robert G. Ingersoll",
+    "status": "likely",
+    "score": 3,
+    "reason": "title_exact",
+    "topDoc": {
+      "title": "Lectures of Col. R. G. Ingersoll",
+      "author": "Robert Green Ingersoll",
+      "first_publish_year": 2003
+    },
+    "numFound": 13
+  }
+]
