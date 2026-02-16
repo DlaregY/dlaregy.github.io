@@ -26,14 +26,16 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           lftp -e "
+            set ftp:user \"$FTP_USERNAME\";
+            set ftp:pass \"$FTP_PASSWORD\";
+
             set ftp:ssl-force true;
             set ftp:ssl-protect-data true;
             set ftp:passive-mode true;
             set ftp:ignore-pasv-address true;
             set ssl:verify-certificate no;
 
-            open -u \"$FTP_USERNAME\",\"$FTP_PASSWORD\" -p 21 $FTP_SERVER;
-
+            open -p 21 \"$FTP_SERVER\";
             mirror -R --delete --verbose \
               --exclude-glob .git* \
               --exclude-glob .github/ \
@@ -41,6 +43,5 @@ jobs:
               --exclude-glob README.md \
               --exclude-glob .cpanel.yml \
               ./ /;
-
             bye
           "
