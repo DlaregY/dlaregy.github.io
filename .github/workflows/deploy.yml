@@ -1,31 +1,16 @@
-name: Deploy to cPanel (FTP)
-
-on:
-  push:
-    branches: ["master"]
-
-concurrency:
-  group: "deploy"
-  cancel-in-progress: true
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /   # because the FTP user is already jailed to /public_html
-          exclude: |
-            **/.git*
-            **/.github/**
-            **/.vscode/**
-            **/node_modules/**
-            README.md
-            .cpanel.yml
+- name: FTP Deploy
+  uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+  with:
+    server: ${{ secrets.FTP_SERVER }}
+    username: ${{ secrets.FTP_USERNAME }}
+    password: ${{ secrets.FTP_PASSWORD }}
+    protocol: ftps    
+    port: ${{ secrets.FTP_PORT }}
+    protocol: ftp
+    server-dir: /
+    exclude: |
+      **/.git*
+      **/.github/**
+      **/.vscode/**
+      README.md
+      .cpanel.yml
