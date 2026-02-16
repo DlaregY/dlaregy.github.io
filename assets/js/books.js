@@ -8,12 +8,12 @@ const books = [
     goodreads: 'https://www.goodreads.com/search?q=The%20Dark%20Tower%20Stephen%20King'
   },
   {
-    title: 'How to Fail at Everything and Still Win Big',
+    title: 'How to Fail at Almost Everything and Still Win Big',
     author: 'Scott Adams',
     // why: 'Funny, practical advice on persistence from a professional contrarian.',
     why: '---',
     link: 'https://www.amazon.com/dp/1591847745',
-    goodreads: 'https://www.goodreads.com/search?q=How%20to%20Fail%20at%20Everything%20and%20Still%20Win%20Big'
+    goodreads: 'https://www.goodreads.com/search?q=How%20to%20Fail%20at%20Almost%20Everything%20and%20Still%20Win%20Big'
   },
   {
     title: 'Foundation series',
@@ -24,12 +24,12 @@ const books = [
     goodreads: 'https://www.goodreads.com/search?q=Foundation%20series%20Isaac%20Asimov'
   },
   {
-    title: 'One Summer: America 1927',
+    title: 'One Summer: America, 1927',
     author: 'Bill Bryson',
     // why: 'Concise narrative of a defining year in American history.',
     why: '---',
     link: 'https://www.amazon.com/dp/0767919412',
-    goodreads: 'https://www.goodreads.com/search?q=One%20Summer%3A%20America%201927%20Bill%20Bryson'
+    goodreads: 'https://www.goodreads.com/search?q=One%20Summer%3A%20America%2C%201927%20Bill%20Bryson'
   },
   {
     title: 'The Righteous Mind',
@@ -168,11 +168,11 @@ const books = [
     goodreads: 'https://www.goodreads.com/search?q=Hitchhiker%27s%20Guide%20to%20the%20Galaxy%20series'
   },
   {
-    title: 'How to Win Friends & Influence People',
+    title: 'How to Win Friends and Influence People',
     author: 'Dale Carnegie',
     // why: 'Foundational principles for social skill and rapport building.',
     why: '---',
-    link: 'https://www.amazon.com/s?k=How+to+Win+Friends+%26+Influence+People',
+    link: 'https://www.amazon.com/s?k=How+to+Win+Friends+and+Influence+People',
     goodreads: 'https://www.goodreads.com/search?q=How%20to%20Win%20Friends%20and%20Influence%20People'
   },
   {
@@ -232,12 +232,12 @@ const books = [
     goodreads: 'https://www.goodreads.com/search?q=A%20Hero%20of%20Our%20Time%20Lermontov'
   },
   {
-    title: "Alice's Adventures In Wonderland",
+    title: "Alice's Adventures in Wonderland",
     author: 'Lewis Carroll',
     // why: 'A playful classic of logic, language, and absurdity.',
     why: '---',
-    link: 'https://www.amazon.com/s?k=Alice%27s+Adventures+In+Wonderland+Lewis+Carroll',
-    goodreads: 'https://www.goodreads.com/search?q=Alice%27s%20Adventures%20In%20Wonderland%20Lewis%20Carroll'
+    link: 'https://www.amazon.com/s?k=Alice%27s+Adventures+in+Wonderland+Lewis+Carroll',
+    goodreads: 'https://www.goodreads.com/search?q=Alice%27s%20Adventures%20in%20Wonderland%20Lewis%20Carroll'
   },
   {
     title: "What's Eating Gilbert Grape",
@@ -477,9 +477,9 @@ const categoryOrder = [
 
 const categoryByTitle = {
   'Dark Tower series': 'Horror and Supernatural',
-  'How to Fail at Everything and Still Win Big': 'Psychology and Self-Development',
+  'How to Fail at Almost Everything and Still Win Big': 'Psychology and Self-Development',
   'Foundation series': 'Science Fiction, Fantasy, and Speculative Fiction',
-  'One Summer: America 1927': 'History, Society, and Biography',
+  'One Summer: America, 1927': 'History, Society, and Biography',
   'The Righteous Mind': 'Psychology and Self-Development',
   'Lanny Budd series': 'Literary Fiction and Classics',
   It: 'Horror and Supernatural',
@@ -497,7 +497,7 @@ const categoryByTitle = {
   'The Moon Is a Harsh Mistress': 'Science Fiction, Fantasy, and Speculative Fiction',
   'The Lazarus Long books': 'Science Fiction, Fantasy, and Speculative Fiction',
   "The Hitchhiker's Guide to the Galaxy series": 'Science Fiction, Fantasy, and Speculative Fiction',
-  'How to Win Friends & Influence People': 'Psychology and Self-Development',
+  'How to Win Friends and Influence People': 'Psychology and Self-Development',
   'Bastards': 'Science Fiction, Fantasy, and Speculative Fiction',
   'The Amazing Adventures of Kavalier & Clay': 'Literary Fiction and Classics',
   'Homo Deus': 'History, Society, and Biography',
@@ -505,7 +505,7 @@ const categoryByTitle = {
   'The Sot-Weed Factor': 'Literary Fiction and Classics',
   'The End of the Road': 'Literary Fiction and Classics',
   'A Hero of Our Time': 'Literary Fiction and Classics',
-  "Alice's Adventures In Wonderland": 'Literary Fiction and Classics',
+  "Alice's Adventures in Wonderland": 'Literary Fiction and Classics',
   "What's Eating Gilbert Grape": 'Literary Fiction and Classics',
   'A Scanner Darkly': 'Science Fiction, Fantasy, and Speculative Fiction',
   'Pet Sematary': 'Horror and Supernatural',
