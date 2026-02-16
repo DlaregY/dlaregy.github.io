@@ -533,6 +533,23 @@ textarea {
 }
 
 @media (max-width: 760px) {
+  .site-header {
+    flex-wrap: wrap;
+    row-gap: 0.55rem;
+  }
+
+  .brand-wrap {
+    max-width: min(52vw, 190px);
+  }
+
+  .brand-tagline {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.08rem;
+    line-height: 1.25;
+  }
+
   .menu-button {
     display: inline-block;
   }
@@ -550,7 +567,11 @@ textarea {
   }
 
   .theme-toggle {
-    margin-left: auto;
+    order: 4;
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   nav.show {
