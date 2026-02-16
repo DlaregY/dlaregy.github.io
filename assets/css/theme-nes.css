@@ -30,6 +30,10 @@ html[data-theme='nes'] .menu-button {
   font-synthesis: none;
 }
 
+html[data-theme='nes'] .brand-tagline {
+  font-size: 0.432rem;
+}
+
 html[data-theme='nes'] .brand > span,
 html[data-theme='nes'] nav a[aria-current='page'] {
   font-weight: 400;
