@@ -30,8 +30,7 @@ function swapThemedImages(theme) {
 
     if (!basePath) return;
 
-    const variant = theme === 'modern' ? 'modern' : 'retro';
-    const targetSrc = `${basePath}--${variant}${ext}`;
+    const targetSrc = `${basePath}--${theme}${ext}`;
     const modernSrc = `${basePath}--modern${ext}`;
 
     if (img.dataset.activeTheme === theme && img.getAttribute('src') === targetSrc) {

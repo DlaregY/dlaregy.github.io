@@ -24,13 +24,12 @@ A static personal website with one shared set of pages and three switchable them
 Use themed image swapping only for images marked with `.themed-img`.
 
 ### Naming convention
-For any themed image, store both files:
+For any themed image, store all three files:
 - `assets/img/<name>--modern.<ext>`
-- `assets/img/<name>--retro.<ext>`
+- `assets/img/<name>--nes.<ext>`
+- `assets/img/<name>--dos.<ext>`
 
-`--retro` is used automatically for both `nes` and `dos` themes.
-
-If a retro file is missing, JavaScript falls back to `--modern`.
+If a selected theme file is missing, JavaScript falls back to `--modern`.
 
 ### HTML format
 ```html

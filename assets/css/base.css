@@ -374,9 +374,55 @@ textarea:focus-visible {
   gap: 1rem;
 }
 
-.compact-section h2 {
-  margin: 0 0 0.65rem;
+.category-stack .compact-section {
+  display: grid;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.45);
+  padding: 0.85rem;
+}
+
+.category-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+.category-stack .compact-section h2 {
+  margin: 0;
   font-size: 1rem;
+}
+
+.category-count {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.category-content {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.subcategory-block {
+  display: grid;
+  gap: 0.45rem;
+  border-left: 3px solid rgba(83, 105, 255, 0.3);
+  padding-left: 0.7rem;
+}
+
+.subcategory-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .contact-form {
@@ -415,6 +461,11 @@ textarea {
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
+  }
+
+  .category-heading {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .hero-visual {

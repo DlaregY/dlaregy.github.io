@@ -25,3 +25,34 @@ html[data-theme='dos'] textarea,
 html[data-theme='dos'] .theme-toggle {
   border-radius: 0;
 }
+
+html[data-theme='dos'] .compact-item-static {
+  background: #131913;
+  border-color: var(--border);
+}
+
+html[data-theme='dos'] .compact-item-static:hover {
+  background: #1a231a;
+}
+
+html[data-theme='dos'] .mini-link {
+  color: #b5ffb7;
+  border-color: var(--border);
+  background: #111711;
+}
+
+html[data-theme='dos'] .mini-link:hover {
+  background: #1a231a;
+  border-color: var(--accent-2);
+}
+
+html[data-theme='dos'] .mini-link.secondary {
+  color: #a8ffe5;
+  border-color: #4f8b76;
+  background: #101714;
+}
+
+html[data-theme='dos'] .mini-link.secondary:hover {
+  background: #18211d;
+  border-color: #79c4aa;
+}
