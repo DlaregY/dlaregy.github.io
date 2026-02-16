@@ -66,3 +66,26 @@ document.querySelectorAll('[data-theme-btn]').forEach((button) => {
 });
 
 applyTheme(savedTheme);
+
+
+const brandTagline = document.querySelector('.brand > span');
+
+if (brandTagline) {
+  brandTagline.setAttribute('role', 'link');
+  brandTagline.setAttribute('tabindex', '0');
+  brandTagline.setAttribute('aria-label', 'Open restricted access page');
+  brandTagline.style.cursor = 'pointer';
+
+  const openSecretLoginPage = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    window.location.href = 'secret-login.html';
+  };
+
+  brandTagline.addEventListener('click', openSecretLoginPage);
+  brandTagline.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      openSecretLoginPage(event);
+    }
+  });
+}
