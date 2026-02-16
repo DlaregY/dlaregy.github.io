@@ -14,6 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: DNS check
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        run: |
+          echo "len=$(printf '%s' "$FTP_SERVER" | wc -c)"
+          echo -n "hex="; printf '%s' "$FTP_SERVER" | od -An -t x1; echo
+          getent hosts "$FTP_SERVER" || true
+
       - name: Install lftp
         run: |
           sudo apt-get update
@@ -44,7 +52,7 @@ jobs:
             set ftp:passive-mode yes;
             set ftp:ignore-pasv-address yes;
 
-            open -p 21 \"$FTP_SERVER\";
+            open -p 21 \"ftp.cloud208.cloudwebhosting.com\";
             user \"$FTP_USERNAME\" \"$FTP_PASSWORD\";
             pwd;
             ls;
@@ -64,7 +72,7 @@ jobs:
             set ftp:passive-mode yes;
             set ftp:ignore-pasv-address yes;
 
-            open -p 21 \"$FTP_SERVER\";
+            open -p 21 \"$ftp.cloud208.cloudwebhosting.com\";
             user \"$FTP_USERNAME\" \"$FTP_PASSWORD\";
 
             mirror -R --delete --verbose \
