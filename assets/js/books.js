@@ -409,7 +409,7 @@ const books = [
     title: 'Half Empty',
     author: 'David Rakoff',
     // why: 'Humorous essays examining pessimism, culture, and modern life.',
-    why: '---',
+    why: 'Due to the personal nature of the essays within, I highly recommend listening to Rakoff himself read this.',
     link: 'https://www.amazon.com/s?k=Half+Empty+David+Rakoff',
     goodreads: 'https://www.goodreads.com/search?q=Half%20Empty%20David%20Rakoff'
   },
@@ -426,7 +426,7 @@ const books = [
     title: 'Clockwork Angels series',
     author: 'Kevin J. Anderson and Neil Peart',
     // why: 'Steampunk-flavored speculative adventure with philosophical undertones.',
-    why: '---',
+    why: 'Clockwork Angels is my favorite Rush album, and you should listen to it while reading this. There are not many pairings of this nature, but in high school I unpurposefully found myself listening to "Killing An Arab," while reading The Stranger, and I\'ve been chasing that high ever since.',
     link: 'https://www.amazon.com/s?k=Clockwork+Angels+series',
     goodreads: 'https://www.goodreads.com/search?q=Clockwork%20Angels%20series'
   },
