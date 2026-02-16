@@ -1,6 +1,6 @@
 const books = [
   {
-    title: "Stephen King's Dark Tower series",
+    title: 'Dark Tower series',
     author: 'Stephen King',
     // why: 'Genre-bending epic of myth, western, and long-form character arcs.',
     why: '---',
@@ -16,7 +16,7 @@ const books = [
     goodreads: 'https://www.goodreads.com/search?q=How%20to%20Fail%20at%20Everything%20and%20Still%20Win%20Big'
   },
   {
-    title: "Asimov's Foundation series",
+    title: 'Foundation series',
     author: 'Isaac Asimov',
     // why: 'Big-idea sci-fi about math, empire, and humans making the same mistakes forever.',
     why: '---',
@@ -40,7 +40,7 @@ const books = [
     goodreads: 'https://www.goodreads.com/search?q=The%20Righteous%20Mind%20Jonathan%20Haidt'
   },
   {
-    title: "Upton Sinclair's Lanny Budd series",
+    title: 'Lanny Budd series',
     author: 'Upton Sinclair',
     // why: 'Historical fiction sweeping through major events of the 20th century.',
     why: '---',
@@ -176,7 +176,7 @@ const books = [
     goodreads: 'https://www.goodreads.com/search?q=How%20to%20Win%20Friends%20and%20Influence%20People'
   },
   {
-    title: 'Gentleman Bastard series',
+    title: 'Bastards',
     author: 'Scott Lynch',
     // why: 'Heist fantasy with layered schemes and memorable dialogue.',
     why: '---',
@@ -230,6 +230,14 @@ const books = [
     why: '---',
     link: 'https://www.amazon.com/s?k=A+Hero+of+Our+Time+Lermontov',
     goodreads: 'https://www.goodreads.com/search?q=A%20Hero%20of%20Our%20Time%20Lermontov'
+  },
+  {
+    title: "Alice's Adventures In Wonderland",
+    author: 'Lewis Carroll',
+    // why: 'A playful classic of logic, language, and absurdity.',
+    why: '---',
+    link: 'https://www.amazon.com/s?k=Alice%27s+Adventures+In+Wonderland+Lewis+Carroll',
+    goodreads: 'https://www.goodreads.com/search?q=Alice%27s%20Adventures%20In%20Wonderland%20Lewis%20Carroll'
   },
   {
     title: "What's Eating Gilbert Grape",
@@ -462,24 +470,25 @@ const categoryOrder = [
   'Horror and Supernatural',
   'Literary Fiction and Classics',
   'History, Society, and Biography',
-  'Psychology, Philosophy, and Self-Development',
+  'Psychology and Self-Development',
+  'Philosophy',
   'Markets, Risk, and Decision-Making'
 ];
 
 const categoryByTitle = {
-  "Stephen King's Dark Tower series": 'Horror and Supernatural',
-  'How to Fail at Everything and Still Win Big': 'Psychology, Philosophy, and Self-Development',
-  "Asimov's Foundation series": 'Science Fiction, Fantasy, and Speculative Fiction',
+  'Dark Tower series': 'Horror and Supernatural',
+  'How to Fail at Everything and Still Win Big': 'Psychology and Self-Development',
+  'Foundation series': 'Science Fiction, Fantasy, and Speculative Fiction',
   'One Summer: America 1927': 'History, Society, and Biography',
-  'The Righteous Mind': 'Psychology, Philosophy, and Self-Development',
-  "Upton Sinclair's Lanny Budd series": 'History, Society, and Biography',
+  'The Righteous Mind': 'Psychology and Self-Development',
+  'Lanny Budd series': 'Literary Fiction and Classics',
   It: 'Horror and Supernatural',
   'The Brothers Karamazov': 'Literary Fiction and Classics',
-  'How to Think Like a Roman Emperor': 'Psychology, Philosophy, and Self-Development',
-  'The Enchiridion': 'Psychology, Philosophy, and Self-Development',
+  'How to Think Like a Roman Emperor': 'Philosophy',
+  'The Enchiridion': 'Philosophy',
   'The Zamonia series': 'Science Fiction, Fantasy, and Speculative Fiction',
   'The Callahan series': 'Science Fiction, Fantasy, and Speculative Fiction',
-  'How to Have Confidence and Power in Dealing with People': 'Psychology, Philosophy, and Self-Development',
+  'How to Have Confidence and Power in Dealing with People': 'Psychology and Self-Development',
   'Destiny of the Republic': 'History, Society, and Biography',
   'The Way of the Shaman series': 'Science Fiction, Fantasy, and Speculative Fiction',
   'Ready Player One': 'Science Fiction, Fantasy, and Speculative Fiction',
@@ -488,42 +497,43 @@ const categoryByTitle = {
   'The Moon Is a Harsh Mistress': 'Science Fiction, Fantasy, and Speculative Fiction',
   'The Lazarus Long books': 'Science Fiction, Fantasy, and Speculative Fiction',
   "The Hitchhiker's Guide to the Galaxy series": 'Science Fiction, Fantasy, and Speculative Fiction',
-  'How to Win Friends & Influence People': 'Psychology, Philosophy, and Self-Development',
-  'Gentleman Bastard series': 'Science Fiction, Fantasy, and Speculative Fiction',
+  'How to Win Friends & Influence People': 'Psychology and Self-Development',
+  'Bastards': 'Science Fiction, Fantasy, and Speculative Fiction',
   'The Amazing Adventures of Kavalier & Clay': 'Literary Fiction and Classics',
   'Homo Deus': 'History, Society, and Biography',
   'The Cider House Rules': 'Literary Fiction and Classics',
   'The Sot-Weed Factor': 'Literary Fiction and Classics',
   'The End of the Road': 'Literary Fiction and Classics',
   'A Hero of Our Time': 'Literary Fiction and Classics',
+  "Alice's Adventures In Wonderland": 'Literary Fiction and Classics',
   "What's Eating Gilbert Grape": 'Literary Fiction and Classics',
   'A Scanner Darkly': 'Science Fiction, Fantasy, and Speculative Fiction',
   'Pet Sematary': 'Horror and Supernatural',
   'Incerto series': 'Markets, Risk, and Decision-Making',
   "The Mote in God's Eye": 'Science Fiction, Fantasy, and Speculative Fiction',
   'Adaptive Markets': 'Markets, Risk, and Decision-Making',
-  'King Coal': 'History, Society, and Biography',
+  'King Coal': 'Literary Fiction and Classics',
   Babbitt: 'Literary Fiction and Classics',
   'MaddAddam series': 'Science Fiction, Fantasy, and Speculative Fiction',
-  'The Undoing Project: A Friendship That Changed Our Minds': 'Psychology, Philosophy, and Self-Development',
+  'The Undoing Project: A Friendship That Changed Our Minds': 'Psychology and Self-Development',
   "Midnight's Children": 'Literary Fiction and Classics',
   'Memos from Purgatory': 'History, Society, and Biography',
   'Dune trilogy': 'Science Fiction, Fantasy, and Speculative Fiction',
   'The Vampire Chronicles': 'Horror and Supernatural',
   'The Bonfire of the Vanities': 'Literary Fiction and Classics',
   'A Man in Full': 'Literary Fiction and Classics',
-  '12 Rules for Life: An Antidote to Chaos': 'Psychology, Philosophy, and Self-Development',
+  '12 Rules for Life: An Antidote to Chaos': 'Psychology and Self-Development',
   'Cold Mountain': 'Literary Fiction and Classics',
   'Mount Chicago': 'Literary Fiction and Classics',
-  'Moonwalking with Einstein: The Art and Science of Remembering Everything': 'Psychology, Philosophy, and Self-Development',
-  'Half Empty': 'History, Society, and Biography',
-  'The Jungle': 'History, Society, and Biography',
+  'Moonwalking with Einstein: The Art and Science of Remembering Everything': 'Psychology and Self-Development',
+  'Half Empty': 'Psychology and Self-Development',
+  'The Jungle': 'Literary Fiction and Classics',
   'Clockwork Angels series': 'Science Fiction, Fantasy, and Speculative Fiction',
   'Vampire$': 'Horror and Supernatural',
   'The World of Null-A': 'Science Fiction, Fantasy, and Speculative Fiction',
   'The Learners': 'Literary Fiction and Classics',
   'The Ask': 'Literary Fiction and Classics',
-  'Lectures of Col. R. G. Ingersoll': 'Psychology, Philosophy, and Self-Development'
+  'Lectures of Col. R. G. Ingersoll': 'Philosophy'
 };
 
 const defaultCategory = 'Literary Fiction and Classics';
@@ -601,6 +611,10 @@ const categorySubgrouping = {
       {
         label: 'Tom Wolfe',
         match: (book) => book.author === 'Tom Wolfe'
+      },
+      {
+        label: 'Upton Sinclair',
+        match: (book) => book.author === 'Upton Sinclair'
       }
     ],
     otherLabel: 'Other Smart Dudes'
