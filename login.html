@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="modern">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restricted Access Terminal | Gerald Norby</title>
+    <meta name="description" content="A fake restricted access terminal hidden in plain sight." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/theme-modern.css" />
+    <link rel="stylesheet" href="assets/css/theme-nes.css" />
+    <link rel="stylesheet" href="assets/css/theme-dos.css" />
+    <style>
+      :root {
+        --terminal-border: #7a0000;
+        --terminal-glow: rgba(180, 0, 0, 0.45);
+        --terminal-glow-soft: rgba(180, 0, 0, 0.2);
+        --terminal-bg: rgba(0, 0, 0, 0.84);
+        --terminal-text: #ff3a3a;
+        --terminal-text-soft: #ff6f6f;
+        --terminal-input: #ffe3e3;
+      }
+
+      html[data-theme='modern'] {
+        --terminal-border: #7a0000;
+        --terminal-glow: rgba(180, 0, 0, 0.45);
+        --terminal-glow-soft: rgba(180, 0, 0, 0.2);
+        --terminal-bg: rgba(0, 0, 0, 0.84);
+        --terminal-text: #ff3a3a;
+        --terminal-text-soft: #ff6f6f;
+        --terminal-input: #ffe3e3;
+      }
+
+      html[data-theme='dos'] {
+        --terminal-border: #5f7c5f;
+        --terminal-glow: rgba(158, 255, 160, 0.28);
+        --terminal-glow-soft: rgba(158, 255, 160, 0.16);
+        --terminal-bg: rgba(8, 12, 8, 0.94);
+        --terminal-text: #9effa0;
+        --terminal-text-soft: #b6ffb7;
+        --terminal-input: #e2ffe3;
+      }
+
+      html[data-theme='nes'] {
+        --terminal-border: #f8f8f8;
+        --terminal-glow: rgba(54, 241, 255, 0.3);
+        --terminal-glow-soft: rgba(255, 239, 90, 0.18);
+        --terminal-bg: rgba(9, 13, 36, 0.92);
+        --terminal-text: #36f1ff;
+        --terminal-text-soft: #ffef5a;
+        --terminal-input: #f7f7ff;
+      }
+
+      .terminal-shell {
+        width: min(1000px, 100%);
+        min-height: clamp(420px, 62vh, 720px);
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        border: 2px solid var(--terminal-border);
+        box-shadow: 0 0 30px var(--terminal-glow), inset 0 0 45px var(--terminal-glow-soft);
+        background: var(--terminal-bg);
+      }
+
+      .terminal-shell h1 {
+        margin: 0;
+        font-size: clamp(2rem, 6vw, 4.4rem);
+        line-height: 1;
+        color: var(--terminal-text);
+        text-shadow: 0 0 10px var(--terminal-glow);
+      }
+
+      .prompt {
+        margin: 0;
+        color: var(--terminal-text-soft);
+        font-size: clamp(1.15rem, 2.8vw, 2rem);
+      }
+
+      #fake-login {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .entry-line {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        font-size: clamp(1.05rem, 2.6vw, 1.8rem);
+      }
+
+      .entry-line .sigil {
+        color: var(--terminal-text-soft);
+      }
+
+      .entry-line input {
+        flex: 1;
+        border: none;
+        border-bottom: 2px solid var(--terminal-border);
+        background: transparent;
+        color: var(--terminal-input);
+        font: inherit;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.3rem 0;
+        border-radius: 0;
+      }
+
+      .entry-line input:focus-visible {
+        outline: none;
+        border-color: var(--terminal-text-soft);
+      }
+
+      .cursor {
+        width: 0.8ch;
+        height: 1.1em;
+        background: var(--terminal-text);
+        animation: blink 0.9s steps(1, end) infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .terminal-submit {
+        width: fit-content;
+        border-radius: 12px;
+      }
+
+      html[data-theme='dos'] .terminal-submit,
+      html[data-theme='nes'] .terminal-submit {
+        border-radius: 0;
+      }
+
+      .response {
+        margin: 0;
+        min-height: 2em;
+        color: var(--terminal-text);
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        text-shadow: 0 0 10px var(--terminal-glow);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="aurora"></div>
+    <div class="grid-overlay"></div>
+    <header class="site-header">
+      <div class="brand-wrap">
+        <a class="brand" href="index.html">Gerald Norby</a>
+        <a class="brand-tagline" href="login.html">Incessantly <span title="Not Irritating!">Iterating</span></a>
+      </div>
+      <button class="menu-button" aria-label="Toggle menu">&#9776;</button>
+      <nav>
+        <a href="projects.html">Projects</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="books.html">Books</a>
+        <a href="links.html">Links</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="theme-toggle" role="group" aria-label="Theme selector">
+        <span>Theme:</span>
+        <button type="button" data-theme-btn="modern">Modern</button>
+        <button type="button" data-theme-btn="dos">DOS</button>
+        <button type="button" data-theme-btn="nes">NES</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section card terminal-shell" aria-live="polite">
+        <p class="eyebrow">Restricted access terminal</p>
+        <h1>RESTRICTED ACCESS</h1>
+        <p class="prompt">ENTER PASSWORD:</p>
+        <form id="fake-login">
+          <label class="entry-line">
+            <span class="sigil">&gt;</span>
+            <input id="password" name="password" type="password" autocomplete="off" autofocus />
+            <span class="cursor" aria-hidden="true"></span>
+          </label>
+          <button class="button terminal-submit" type="submit">TRANSMIT CREDENTIALS</button>
+        </form>
+        <p class="response" id="response"></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Gerald Norby</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+      // This page is intentionally decorative and does not authenticate anything.
+      const fakeLoginForm = document.getElementById('fake-login');
+      const responseTarget = document.getElementById('response');
+      const passwordInput = document.getElementById('password');
+
+      fakeLoginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        responseTarget.textContent = 'ACCESS DENIED';
+        fakeLoginForm.reset();
+        passwordInput.focus();
+      });
+    </script>
+  </body>
+</html>

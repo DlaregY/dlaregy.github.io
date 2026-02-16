@@ -79,7 +79,7 @@ if (brandTagline) {
   const openSecretLoginPage = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    window.location.href = 'secret-login.html';
+    window.location.href = 'login.html';
   };
 
   brandTagline.addEventListener('click', openSecretLoginPage);
