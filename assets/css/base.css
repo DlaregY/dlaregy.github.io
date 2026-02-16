@@ -415,6 +415,22 @@ textarea:focus-visible {
   gap: 0.75rem;
 }
 
+.category-stack .compact-main {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.category-stack .compact-main h3,
+.category-stack .compact-main p {
+  overflow-wrap: anywhere;
+}
+
+.category-stack .compact-main p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
 #bookGrid .compact-main {
   flex: 1 1 0;
   min-width: 0;
