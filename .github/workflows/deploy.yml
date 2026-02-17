@@ -52,9 +52,8 @@ jobs:
             set ftp:passive-mode yes;
             set ftp:ignore-pasv-address yes;
 
-            open -p 21 \"ftp.cloud208.cloudwebhosting.com\";
+            open -p 21 $FTP_SERVER;
             user \"$FTP_USERNAME\" \"$FTP_PASSWORD\";
-            pwd;
             ls;
             bye
           "
