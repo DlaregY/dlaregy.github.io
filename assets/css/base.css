@@ -668,12 +668,25 @@ textarea {
 
 @media (max-width: 760px) {
   .site-header {
-    flex-wrap: wrap;
-    row-gap: 0.55rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    row-gap: 0;
+    column-gap: 0.45rem;
+    padding: 0.65rem 0.75rem;
   }
 
   .brand-wrap {
-    max-width: min(52vw, 190px);
+    max-width: min(50vw, 170px);
+    min-width: 0;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .brand {
+    display: block;
+    max-width: 6.4ch;
+    line-height: 1.02;
+    white-space: normal;
   }
 
   .brand-tagline {
@@ -682,11 +695,13 @@ textarea {
     align-items: flex-start;
     gap: 0.08rem;
     line-height: 1.25;
+    white-space: nowrap;
   }
 
   .menu-button {
     display: inline-block;
     order: 3;
+    flex-shrink: 0;
   }
 
   nav {
@@ -703,10 +718,21 @@ textarea {
 
   .theme-toggle {
     order: 2;
-    width: 100%;
-    margin-left: 0;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    width: auto;
+    margin-left: auto;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 0.2rem;
+    padding: 0.15rem 0.2rem;
+  }
+
+  .theme-toggle span {
+    display: none;
+  }
+
+  .theme-toggle button {
+    font-size: 0.64rem;
+    padding: 0.14rem 0.3rem;
   }
 
   nav.show {
