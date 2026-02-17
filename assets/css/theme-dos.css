@@ -26,6 +26,19 @@ html[data-theme='dos'] .theme-toggle {
   border-radius: 0;
 }
 
+html[data-theme='dos'] .button {
+  color: #0b0d0b;
+  background: #9effa0;
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+html[data-theme='dos'] .button-secondary {
+  color: #d5dfcf;
+  background: #141a14;
+  border-color: var(--border);
+}
+
 html[data-theme='dos'] .compact-item-static {
   background: #131913;
   border-color: var(--border);

@@ -74,3 +74,30 @@ html[data-theme='nes'] textarea,
 html[data-theme='nes'] .theme-toggle {
   border-radius: 0;
 }
+
+html[data-theme='nes'] .button {
+  color: #0f1331;
+  background: linear-gradient(120deg, #ffef5a, #36f1ff);
+  border: 1px solid #f8f8f8;
+  box-shadow: none;
+}
+
+html[data-theme='nes'] .button-secondary {
+  color: #f7f7ff;
+  background: #1a2358;
+  border-color: #f8f8f8;
+}
+
+html[data-theme='nes'] .category-stack .compact-section {
+  background: rgba(20, 28, 74, 0.94);
+}
+
+html[data-theme='nes'] .category-stack .compact-item-static {
+  background: #121a45;
+  border-color: #f8f8f8;
+}
+
+html[data-theme='nes'] #bookGrid .compact-main p,
+html[data-theme='nes'] .book-spotlight-copy {
+  color: #f2f5ff;
+}
