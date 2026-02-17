@@ -686,6 +686,7 @@ textarea {
 
   .menu-button {
     display: inline-block;
+    order: 3;
   }
 
   nav {
@@ -701,7 +702,7 @@ textarea {
   }
 
   .theme-toggle {
-    order: 4;
+    order: 2;
     width: 100%;
     margin-left: 0;
     justify-content: flex-start;
