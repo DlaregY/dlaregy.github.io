@@ -50,6 +50,29 @@
               <p>I'll blurb these later.</p>
             </section>
 
+            <section class="section card book-controls" aria-label="Book discovery controls">
+              <div class="book-search-wrap">
+                <label for="bookSearch">Search books</label>
+                <input
+                  id="bookSearch"
+                  name="bookSearch"
+                  type="search"
+                  placeholder="Search title, author, or notes"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="book-tools">
+                <div class="chip-row" id="bookCategoryChips" role="group" aria-label="Filter by category"></div>
+                <div class="book-actions">
+                  <button class="button button-secondary" id="bookClearFilters" type="button">Clear filters</button>
+                  <button class="button" id="bookRandomPick" type="button">Random pick</button>
+                </div>
+              </div>
+              <p class="note" id="bookResultMeta" aria-live="polite"></p>
+            </section>
+
+            <section class="section card book-spotlight" id="bookSpotlight" aria-live="polite" hidden></section>
+
             <section class="section card compact-list" id="bookGrid" aria-label="Book list"></section>
 
     </main>

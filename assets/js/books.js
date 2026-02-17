@@ -545,9 +545,75 @@ const categoryByTitle = {
 };
 
 const defaultCategory = 'Literary Fiction and Classics';
+const allCategorySlug = 'all';
 const amazonAffiliateTag = 'geraldnorby-20';
 
 const bookGrid = document.getElementById('bookGrid');
+const bookSearch = document.getElementById('bookSearch');
+const bookCategoryChips = document.getElementById('bookCategoryChips');
+const bookClearFilters = document.getElementById('bookClearFilters');
+const bookRandomPick = document.getElementById('bookRandomPick');
+const bookSpotlight = document.getElementById('bookSpotlight');
+const bookResultMeta = document.getElementById('bookResultMeta');
+
+const slugify = (value) =>
+  String(value)
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+const escapeHtml = (value) =>
+  String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+const getBookCategory = (book) => categoryByTitle[book.title] || defaultCategory;
+const getBookKey = (book) => `${book.title}::${book.author}`;
+const getBookSearchBlob = (book) => `${book.title} ${book.author} ${book.why}`.toLowerCase();
+
+const categoryToSlug = {};
+const slugToCategory = {};
+
+categoryOrder.forEach((category) => {
+  const baseSlug = slugify(category) || 'category';
+  let slug = baseSlug;
+  let suffix = 2;
+
+  while (slugToCategory[slug]) {
+    slug = `${baseSlug}-${suffix}`;
+    suffix += 1;
+  }
+
+  categoryToSlug[category] = slug;
+  slugToCategory[slug] = category;
+});
+
+const allGroupedBooks = books.reduce((acc, book) => {
+  const category = getBookCategory(book);
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+  acc[category].push(book);
+  return acc;
+}, {});
+
+const chipCategories = categoryOrder.filter((category) => allGroupedBooks[category]?.length);
+const allBookCount = books.length;
+
+const bookSearchBlobByKey = books.reduce((acc, book) => {
+  acc.set(getBookKey(book), getBookSearchBlob(book));
+  return acc;
+}, new Map());
+
+let searchQuery = '';
+let activeCategorySlug = allCategorySlug;
+let filteredBooksCache = [];
+let pickedCard = null;
+let pickedCardTimeoutId = null;
 
 const withAmazonTag = (url) => {
   try {
@@ -561,19 +627,26 @@ const withAmazonTag = (url) => {
   }
 };
 
-const renderBookCard = (book) => `
-  <article class="compact-item compact-item-static">
-    <div class="compact-main">
-      <h3>${book.title}</h3>
-      <p>${book.author} &middot; ${book.why}</p>
-    </div>
-    <div class="compact-actions">
-      <a class="mini-link" href="${withAmazonTag(book.link)}" target="_blank" rel="noopener noreferrer">Amazon &#8599;</a>
-      <a class="mini-link secondary" href="${book.goodreads}" target="_blank" rel="noopener noreferrer">Goodreads &#8599;</a>
-      ${book.gutenberg ? `<a class="mini-link tertiary" href="${book.gutenberg}" target="_blank" rel="noopener noreferrer">Gutenberg &#8599;</a>` : ''}
-    </div>
-  </article>
+const makeBookLinkRow = (book) => `
+  <div class="compact-actions">
+    <a class="mini-link" href="${escapeHtml(withAmazonTag(book.link))}" target="_blank" rel="noopener noreferrer">Amazon &#8599;</a>
+    <a class="mini-link secondary" href="${escapeHtml(book.goodreads)}" target="_blank" rel="noopener noreferrer">Goodreads &#8599;</a>
+    ${book.gutenberg ? `<a class="mini-link tertiary" href="${escapeHtml(book.gutenberg)}" target="_blank" rel="noopener noreferrer">Gutenberg &#8599;</a>` : ''}
+  </div>
 `;
+
+const renderBookCard = (book) => {
+  const encodedBookKey = encodeURIComponent(getBookKey(book));
+  return `
+    <article class="compact-item compact-item-static" data-book-key="${encodedBookKey}">
+      <div class="compact-main">
+        <h3>${escapeHtml(book.title)}</h3>
+        <p>${escapeHtml(book.author)} &middot; ${escapeHtml(book.why)}</p>
+      </div>
+      ${makeBookLinkRow(book)}
+    </article>
+  `;
+};
 
 const seriesTitlePattern = /\b(series|trilogy|tetralogy|saga|chronicles|books)\b/i;
 const vampireTitlePattern = /\bvampire/i;
@@ -672,8 +745,8 @@ const buildCategorySubgroups = (category, categoryBooks) => {
 };
 
 const renderSubgroupBlock = (label, content, showLabel) => `
-  <div class="subcategory-block" aria-label="${label || 'Books'}">
-    ${showLabel && label ? `<p class="subcategory-label">${label}</p>` : ''}
+  <div class="subcategory-block" aria-label="${escapeHtml(label || 'Books')}">
+    ${showLabel && label ? `<p class="subcategory-label">${escapeHtml(label)}</p>` : ''}
     ${content}
   </div>
 `;
@@ -684,24 +757,69 @@ const renderCategoryContent = (category, categoryBooks) => {
 
   return subgroups
     .map((subgroup) => {
-      const booksList = `
-        <div class="compact-list">
-          ${subgroup.books.map(renderBookCard).join('')}
-        </div>
-      `;
+      const booksList = `<div class="compact-list">${subgroup.books.map(renderBookCard).join('')}</div>`;
 
       if (!showSubgroupLabels) {
         return booksList;
       }
 
-      return renderSubgroupBlock(subgroup.label, booksList, showSubgroupLabels);
+      return renderSubgroupBlock(subgroup.label || '', booksList, showSubgroupLabels);
     })
     .join('');
 };
 
-if (bookGrid) {
-  const groupedBooks = books.reduce((acc, book) => {
-    const category = categoryByTitle[book.title] || defaultCategory;
+const parseStateFromUrl = () => {
+  const params = new URLSearchParams(window.location.search);
+  const nextSearch = (params.get('q') || '').trim();
+  const nextCategory = (params.get('cat') || '').trim().toLowerCase();
+  const isValidCategory =
+    nextCategory === allCategorySlug || (nextCategory && Boolean(slugToCategory[nextCategory]));
+
+  return {
+    searchQuery: nextSearch,
+    activeCategorySlug: isValidCategory ? nextCategory : allCategorySlug
+  };
+};
+
+const writeStateToUrl = () => {
+  const params = new URLSearchParams();
+  const normalizedSearch = searchQuery.trim();
+
+  if (normalizedSearch) {
+    params.set('q', normalizedSearch);
+  }
+
+  if (activeCategorySlug !== allCategorySlug) {
+    params.set('cat', activeCategorySlug);
+  }
+
+  const paramString = params.toString();
+  const nextUrl = `${window.location.pathname}${paramString ? `?${paramString}` : ''}${window.location.hash}`;
+  window.history.replaceState(null, '', nextUrl);
+};
+
+const normalizeSearchQuery = (value) => value.trim().toLowerCase();
+
+const filterBooks = () => {
+  const normalizedQuery = normalizeSearchQuery(searchQuery);
+  return books.filter((book) => {
+    const bookCategory = getBookCategory(book);
+    if (activeCategorySlug !== allCategorySlug && categoryToSlug[bookCategory] !== activeCategorySlug) {
+      return false;
+    }
+
+    if (!normalizedQuery) {
+      return true;
+    }
+
+    const bookSearchBlob = bookSearchBlobByKey.get(getBookKey(book)) || '';
+    return bookSearchBlob.includes(normalizedQuery);
+  });
+};
+
+const groupBooksByCategory = (bookList) =>
+  bookList.reduce((acc, book) => {
+    const category = getBookCategory(book);
     if (!acc[category]) {
       acc[category] = [];
     }
@@ -709,26 +827,240 @@ if (bookGrid) {
     return acc;
   }, {});
 
-  bookGrid.classList.remove('compact-list');
-  bookGrid.classList.add('category-stack');
+const renderEmptyState = () => `
+  <section class="compact-section" aria-label="No books found">
+    <div class="category-heading">
+      <h2>No matches</h2>
+      <span class="category-count">0 books</span>
+    </div>
+    <p class="note">No books match this filter yet. Try a new search or clear filters.</p>
+  </section>
+`;
 
-  bookGrid.innerHTML = categoryOrder
-    .filter((category) => groupedBooks[category]?.length)
+const renderBookGrid = (bookList) => {
+  if (!bookGrid) {
+    return;
+  }
+
+  const groupedBooks = groupBooksByCategory(bookList);
+  const populatedCategories = categoryOrder.filter((category) => groupedBooks[category]?.length);
+
+  if (!populatedCategories.length) {
+    bookGrid.innerHTML = renderEmptyState();
+    return;
+  }
+
+  bookGrid.innerHTML = populatedCategories
     .map((category) => {
       const categoryBooks = groupedBooks[category];
       return `
-      <section class="compact-section" aria-label="${category}">
-        <div class="category-heading">
-          <h2>${category}</h2>
-          <span class="category-count">${categoryBooks.length} book${categoryBooks.length === 1 ? '' : 's'}</span>
-        </div>
-        <div class="category-content">
-          ${renderCategoryContent(category, categoryBooks)}
-        </div>
-      </section>
-    `
+        <section class="compact-section" aria-label="${escapeHtml(category)}">
+          <div class="category-heading">
+            <h2>${escapeHtml(category)}</h2>
+            <span class="category-count">${categoryBooks.length} book${categoryBooks.length === 1 ? '' : 's'}</span>
+          </div>
+          <div class="category-content">
+            ${renderCategoryContent(category, categoryBooks)}
+          </div>
+        </section>
+      `;
     })
     .join('');
+};
+
+const renderCategoryChips = () => {
+  if (!bookCategoryChips) {
+    return;
+  }
+
+  const allChip = `
+    <button class="chip" type="button" data-category-slug="${allCategorySlug}" aria-pressed="${String(
+      activeCategorySlug === allCategorySlug
+    )}">
+      All (${allBookCount})
+    </button>
+  `;
+
+  const categoryChips = chipCategories
+    .map((category) => {
+      const slug = categoryToSlug[category];
+      const count = allGroupedBooks[category].length;
+      return `
+        <button class="chip" type="button" data-category-slug="${slug}" aria-pressed="${String(activeCategorySlug === slug)}">
+          ${escapeHtml(category)} (${count})
+        </button>
+      `;
+    })
+    .join('');
+
+  bookCategoryChips.innerHTML = allChip + categoryChips;
+};
+
+const renderResultMeta = (visibleBookCount) => {
+  if (!bookResultMeta) {
+    return;
+  }
+
+  const categoryLabel =
+    activeCategorySlug === allCategorySlug ? 'all categories' : slugToCategory[activeCategorySlug] || 'all categories';
+  const normalizedSearch = searchQuery.trim();
+  const searchSuffix = normalizedSearch ? ` Search: "${normalizedSearch}".` : '';
+
+  bookResultMeta.textContent = `Showing ${visibleBookCount} of ${allBookCount} books in ${categoryLabel}.${searchSuffix}`;
+};
+
+const updateRandomPickButton = () => {
+  if (!bookRandomPick) {
+    return;
+  }
+
+  const hasBooks = filteredBooksCache.length > 0;
+  bookRandomPick.disabled = !hasBooks;
+  bookRandomPick.setAttribute('aria-disabled', String(!hasBooks));
+};
+
+const clearPickedCardHighlight = () => {
+  if (pickedCard) {
+    pickedCard.classList.remove('book-card-picked');
+    pickedCard = null;
+  }
+
+  if (pickedCardTimeoutId) {
+    window.clearTimeout(pickedCardTimeoutId);
+    pickedCardTimeoutId = null;
+  }
+};
+
+const highlightBookCard = (book) => {
+  if (!bookGrid) {
+    return;
+  }
+
+  clearPickedCardHighlight();
+
+  const encodedBookKey = encodeURIComponent(getBookKey(book));
+  const targetCard = bookGrid.querySelector(`[data-book-key="${encodedBookKey}"]`);
+
+  if (!targetCard) {
+    return;
+  }
+
+  targetCard.classList.add('book-card-picked');
+  targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  pickedCard = targetCard;
+  pickedCardTimeoutId = window.setTimeout(() => {
+    if (pickedCard) {
+      pickedCard.classList.remove('book-card-picked');
+      pickedCard = null;
+    }
+    pickedCardTimeoutId = null;
+  }, 2200);
+};
+
+const hideSpotlight = () => {
+  if (!bookSpotlight) {
+    return;
+  }
+
+  bookSpotlight.hidden = true;
+  bookSpotlight.innerHTML = '';
+};
+
+const renderSpotlight = (book) => {
+  if (!bookSpotlight) {
+    return;
+  }
+
+  const category = getBookCategory(book);
+
+  bookSpotlight.hidden = false;
+  bookSpotlight.innerHTML = `
+    <p class="eyebrow">Tonight's pick</p>
+    <div class="book-spotlight-head">
+      <h2 class="book-spotlight-title">${escapeHtml(book.title)}</h2>
+      <p class="book-spotlight-meta">${escapeHtml(category)}</p>
+    </div>
+    <p class="book-spotlight-copy">${escapeHtml(book.author)} &middot; ${escapeHtml(book.why)}</p>
+    ${makeBookLinkRow(book)}
+  `;
+};
+
+const rerender = () => {
+  filteredBooksCache = filterBooks();
+  renderCategoryChips();
+  renderBookGrid(filteredBooksCache);
+  renderResultMeta(filteredBooksCache.length);
+  updateRandomPickButton();
+  writeStateToUrl();
+};
+
+const pickRandomBook = () => {
+  if (!filteredBooksCache.length) {
+    return;
+  }
+
+  const randomIndex = Math.floor(Math.random() * filteredBooksCache.length);
+  const selectedBook = filteredBooksCache[randomIndex];
+  renderSpotlight(selectedBook);
+  highlightBookCard(selectedBook);
+};
+
+if (bookGrid) {
+  bookGrid.classList.remove('compact-list');
+  bookGrid.classList.add('category-stack');
+
+  const initialState = parseStateFromUrl();
+  searchQuery = initialState.searchQuery;
+  activeCategorySlug = initialState.activeCategorySlug;
+
+  if (bookSearch) {
+    bookSearch.value = searchQuery;
+    bookSearch.addEventListener('input', (event) => {
+      searchQuery = event.target.value;
+      hideSpotlight();
+      clearPickedCardHighlight();
+      rerender();
+    });
+  }
+
+  if (bookCategoryChips) {
+    bookCategoryChips.addEventListener('click', (event) => {
+      const target = event.target.closest('button[data-category-slug]');
+      if (!target) {
+        return;
+      }
+
+      const nextCategorySlug = target.getAttribute('data-category-slug') || allCategorySlug;
+      if (nextCategorySlug === activeCategorySlug) {
+        return;
+      }
+
+      activeCategorySlug = nextCategorySlug;
+      hideSpotlight();
+      clearPickedCardHighlight();
+      rerender();
+    });
+  }
+
+  if (bookClearFilters) {
+    bookClearFilters.addEventListener('click', () => {
+      const alreadyDefault = !searchQuery && activeCategorySlug === allCategorySlug;
+      searchQuery = '';
+      activeCategorySlug = allCategorySlug;
+      hideSpotlight();
+      clearPickedCardHighlight();
+      if (bookSearch) {
+        bookSearch.value = '';
+      }
+      if (!alreadyDefault) {
+        rerender();
+      }
+    });
+  }
+
+  if (bookRandomPick) {
+    bookRandomPick.addEventListener('click', pickRandomBook);
+  }
+
+  rerender();
 }
-
-

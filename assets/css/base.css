@@ -306,6 +306,7 @@ p {
 .compact-item:focus-visible,
 .button:focus-visible,
 .button-secondary:focus-visible,
+.chip:focus-visible,
 nav a:focus-visible,
 a:focus-visible,
 .menu-button:focus-visible,
@@ -456,6 +457,127 @@ textarea:focus-visible {
   white-space: nowrap;
 }
 
+.book-controls {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.book-search-wrap {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.book-search-wrap label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.book-tools {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.45);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.34rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chip[aria-pressed='true'] {
+  border-color: var(--accent-2);
+  background: rgba(83, 105, 255, 0.13);
+  color: var(--accent-2);
+}
+
+.book-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.book-actions .button {
+  font-size: 0.86rem;
+  padding: 0.52rem 0.85rem;
+}
+
+#bookResultMeta {
+  margin: 0;
+}
+
+.book-spotlight {
+  display: grid;
+  gap: 0.7rem;
+  border: 1px dashed rgba(83, 105, 255, 0.45);
+  background: linear-gradient(120deg, rgba(83, 105, 255, 0.1), rgba(255, 106, 61, 0.06));
+}
+
+.book-spotlight[hidden] {
+  display: none;
+}
+
+.book-spotlight-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.book-spotlight-title {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.book-spotlight-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.book-spotlight-copy {
+  margin: 0;
+}
+
+.book-spotlight .compact-actions {
+  justify-content: flex-start;
+}
+
+.book-card-picked {
+  border-color: var(--accent-2);
+  background: rgba(83, 105, 255, 0.12);
+  box-shadow: 0 0 0 2px rgba(83, 105, 255, 0.2);
+  animation: book-picked-pulse 1.15s ease-out;
+}
+
+@keyframes book-picked-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(83, 105, 255, 0.42);
+  }
+
+  100% {
+    box-shadow: 0 0 0 8px rgba(83, 105, 255, 0);
+  }
+}
+
 .subcategory-block {
   display: grid;
   gap: 0.45rem;
@@ -529,6 +651,10 @@ textarea {
 
   .compact-main p {
     white-space: normal;
+  }
+
+  .book-actions .button {
+    width: auto;
   }
 }
 
