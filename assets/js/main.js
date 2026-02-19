@@ -67,6 +67,73 @@ document.querySelectorAll('[data-theme-btn]').forEach((button) => {
 
 applyTheme(savedTheme);
 
+const prefillContactFormFromQuery = () => {
+  const isContactPage = window.location.pathname.endsWith('contact.html');
+  if (!isContactPage) {
+    return;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const fieldMap = [
+    { param: 'name', id: 'name' },
+    { param: 'email', id: 'email' },
+    { param: 'comment', id: 'comment' },
+    { param: 'things_i_love', id: 'love' }
+  ];
+
+  fieldMap.forEach(({ param, id }) => {
+    const value = (params.get(param) || '').trim();
+    if (!value) {
+      return;
+    }
+
+    const field = document.getElementById(id);
+    if (!field || field.value) {
+      return;
+    }
+
+    field.value = value;
+  });
+};
+
+prefillContactFormFromQuery();
+
+const marcusPopup = document.getElementById('marcus-popup');
+const marcusPopupTriggers = document.querySelectorAll('[data-open-marcus-popup]');
+
+if (marcusPopup && marcusPopupTriggers.length) {
+  marcusPopupTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      if (typeof marcusPopup.showModal === 'function') {
+        if (!marcusPopup.open) {
+          marcusPopup.showModal();
+        }
+      } else {
+        marcusPopup.setAttribute('open', '');
+      }
+    });
+  });
+
+  marcusPopup.addEventListener('click', (event) => {
+    const rect = marcusPopup.getBoundingClientRect();
+    const isInDialog =
+      rect.top <= event.clientY &&
+      event.clientY <= rect.top + rect.height &&
+      rect.left <= event.clientX &&
+      event.clientX <= rect.left + rect.width;
+
+    if (!isInDialog) {
+      if (typeof marcusPopup.close === 'function') {
+        marcusPopup.close();
+      } else {
+        marcusPopup.removeAttribute('open');
+      }
+    }
+  });
+}
+
 
 const brandTagline = document.querySelector('.brand > span');
 
