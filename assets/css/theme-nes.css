@@ -59,8 +59,12 @@ html[data-theme='nes'] .hero-copy {
 }
 
 html[data-theme='nes'] .hero {
-  grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.85fr);
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
   gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+html[data-theme='nes'] .hero-visual {
+  width: 100%;
 }
 
 @media (max-width: 900px) {
